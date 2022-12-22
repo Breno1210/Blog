@@ -1,17 +1,24 @@
 //IMPORTS REACT
-import React from "react";
-import { Link } from "react-router-dom";
+import { useState, useContext } from 'react';
+import { Link, useNavigate } from "react-router-dom";
 
 //COMPONENTS
 import Header from "Components/header";
 import Footer from "Components/footer";
+import Context from 'Pages/Context/Context';
 
 //SVGS OU IMGS
 import logo from "svg/blog-logo2.svg";
 import iconUser from "svg/icon-user.svg";
 import iconPassword from 'svg/icon-password.svg'
 
+//API
+import api from 'services/api';
+
+//import MD5 from "crypto-js/md5";
+
 const Login = () => {
+  
   return (
     <>
       <Header />

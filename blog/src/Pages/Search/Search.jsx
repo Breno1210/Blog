@@ -1,66 +1,81 @@
 //React
-import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 //COMPONENTS
 import Header from "Components/header";
 import Footer from "Components/footer";
+import Card from "Components/card";
 
+//Hooks
+import { useState, useEffect } from "react";
+
+//API
+import api from "services/api";
 
 const Search = () => {
+  const { word_search } = useParams();
+
+  //Variveis de estado
+  const [word, setWord] = useState(word_search);
+  const [search, setSearch] = useState([]);
+  const [form, setForm] = useState([]);
+
+  useEffect(() => {
+    if (word) {
+      api.get(`/posts?q=${word}`)
+      .then((response) => {
+        setSearch(response.data);
+      });
+    }
+  }, [word]);
+
+  function onChange(event) {
+    const { value, name } = event.target;
+
+    setForm({ ...form, [name]: value });
+
+  }
+
+  function handleSearch(e){
+    e.preventDefault();
+
+    setWord(form.search);
+
+}
+
   return (
     <>
       <Header />
       <section className="container">
         <div data-aos="fade-down" data-aos-delay="200">
-          <h6 className="text-center color-gradient-3 bold uppercase">
-            3 Resultados
+          <h6 className="color-primary text-center uppercase">
+            {search.length} Resultados
           </h6>
-          <h3 className="text-center">Tecnlogia</h3>
+          <h3 className="text-center">'{word}'</h3>
           <div className="row">
-            <div className="grid-2"></div>
+            <div className="grid-2 disappear"></div>
             <div className="grid-8">
-              <form className="flex">
-                <input type="text" name="search" placeholder="Buscar..." />
+              <form className="flex-center" onSubmit={handleSearch}>
+                <input
+                  type="text"
+                  name="search"
+                  placeholder="Buscar..."
+                  onChange={onChange}
+                />
                 <div className="cta-desktop ml-3">
-                  <Link href="#" className="btn">
-                    Buscar
-                  </Link>
+                  <Link className="btn">Buscar</Link>
                 </div>
               </form>
             </div>
-            <div className="grid-2"></div>
+            <div className="grid-2 disappear"></div>
           </div>
         </div>
 
-        <div
-          className="row mb-7 mt-7"
-          data-aos="fade-down"
-          data-aos-delay="400"
-        >
-          <div className="grid-4 card p-0">
-            
-          </div>
-          <div className="grid-4 card p-0">
-            
-          </div>
-          <div className="grid-4 card p-0">
-            
-          </div>
-        </div>
-
-        {/* <h4 className="ml-2 mb-3">Posts Relacionados</h4>
         <div className="row">
-          <div className="grid-4 card p-0">
-            <TestCard />
-          </div>
-          <div className="grid-4 card p-0">
-            <TestCard />
-          </div>
-          <div className="grid-4 card p-0">
-            <TestCard />
-          </div>
-        </div> */}
+          {search.map((item) => {
+            return <Card key={item.id} content={item} />;
+          })}
+        </div>
       </section>
       <Footer />
     </>

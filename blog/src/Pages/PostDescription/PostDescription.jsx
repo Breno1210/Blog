@@ -6,8 +6,6 @@ import Header from "Components/header";
 import Footer from "Components/footer";
 
 //SVGS E IMGS
-import ImgProfile from "img/profile/ny.jpg";
-import bgDescription from "img/bg-description.jpg";
 import iconFacebook from "svg/icon-facebook.svg";
 import iconInstagram from "svg/icon-instagram.svg";
 import iconYoutube from "svg/icon-youtube.svg";

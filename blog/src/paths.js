@@ -40,7 +40,7 @@ const Paths = () => {
           } />  */} 
 
           <Route path="/description/:idPost" element={<PostDescription/>}/>
-          <Route path="/search" element={<Search/>}/>
+          <Route path="/search/:word_search" element={<Search/>}/>
 
           <Route path="*" element={<NotFound/>}/>
         </Routes>

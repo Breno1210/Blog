@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 const Card = ( {content} ) => {
   return (
     <>
-      <div className="grid-4 card hidden p-0">
+      <div className="grid-4 card hidden p-0 mb-5">
         <div className="thumb hidden">
           <Link href="" className="p-0">
             <img src={content.imageUrl} alt="" />
