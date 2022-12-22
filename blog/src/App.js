@@ -3,6 +3,7 @@ import { useEffect } from "react";
 
 //Pages
 import Paths from "paths";
+import Provider from 'Pages/Provider/Provider';
 
 function App() {
   // useEffect para carregar o script do menu responsivo
@@ -23,7 +24,9 @@ function App() {
   
   return (
     <>
+      <Provider>
       <Paths />
+    </Provider>
     </>
   );
 }

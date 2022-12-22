@@ -10,15 +10,15 @@ import Search from "Pages/Search/Search";
 
 import { BrowserRouter, Route, Routes, Navigate } from 'react-router-dom';
 
-//import Context from 'pages/Context';
+import Context from 'Pages/Context/Context';
 import { useContext } from 'react';
 
 
-/* function PrivateRoute({ children }) {
+function PrivateRoute({ children }) {
   const { token } = useContext(Context);
 
   return token ? children : <Navigate to="/login" />;
-} */
+}
 
 const Paths = () => {
   return (
@@ -30,14 +30,14 @@ const Paths = () => {
           <Route path="/about" element={<About/>}/>
           <Route path="/contact" element={<Contact/>}/>
           <Route path="/login" element={<Login/>}/>
-          <Route path="/profile" element={<Profile/>}/>
+          {/* <Route path="/profile" element={<Profile/>}/> */}
 
-          {/* <Route path="profile" 
+          <Route path="profile" 
           element={
               <PrivateRoute>
                 <Profile />
               </PrivateRoute>
-          } />  */} 
+          } />  
 
           <Route path="/description/:idPost" element={<PostDescription/>}/>
           <Route path="/search/:word_search" element={<Search/>}/>

@@ -1,4 +1,4 @@
-import Context from 'pages/Context';
+import Context from 'Pages/Context/Context';
 import { useState } from 'react';
 
 const Provider = ( {children} ) => {

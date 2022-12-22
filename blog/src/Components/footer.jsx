@@ -51,7 +51,7 @@ const Footer = () => {
                         </p>
                         <div className="flex-start-row mt-2">
                             <input type="text" name="search" id="" placeholder="Digite seu e-mail aqui" />
-                            <button className="btn ml-2">Cadastrar</button>
+                            <Link to='/contact' className="btn ml-2">Cadastrar</Link>
                         </div>
                     </div>
                 </div>

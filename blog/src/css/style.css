@@ -1931,7 +1931,7 @@ nav {
 .icon-user {
   cursor: pointer;
   position: absolute;
-  top: 8%;
+  top: 7%;
   left: 2%;
   height: 48px;
   width: 35px;
@@ -1950,7 +1950,7 @@ nav {
 .icon-password {
   cursor: pointer;
   position: absolute;
-  top: 39%;
+  top: 35%;
   left: 2%;
   height: 48px;
   width: 35px;

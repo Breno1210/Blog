@@ -1,37 +1,65 @@
 //React
 import { Link, useNavigate } from "react-router-dom";
-import { useState } from "react";
+import { useState, useContext } from "react";
+
+//COMPONENTS
+import Context from 'Pages/Context/Context';
 
 //SVG
 import logo from "svg/blog-logo.svg";
 
+import api from 'services/api';
+
 const Header = () => {
+  const initialValueForm = {
+    search: ''
+  }
 
-    const initialValueForm = {
-        search: ''
-    }
+  // Puxando o token do Context
+  const { token, idUser, setToken, setIdUser } = useContext(Context);
+  const [nameUser, setNameUser] = useState('');
+  const [form, setForm] = useState(initialValueForm);
+  const navigate = useNavigate();
 
-    //Variaveis de Estado
-    const [form, setForm] = useState(initialValueForm);
 
-    // UseNavigate para redirecionar
-    const navigate = useNavigate();
+  // Se tiver o token e iduser, buscar o nome do usuário
+  if(token && idUser){
 
-    function onChange(event){
-        const {value, name} = event.target;
+    api.get(`/user?id=${idUser}`)
+    .then((response) => {
+      setNameUser(response.data[0].name);
+    })
 
-        setForm({...form, [name]: value});
+  }
 
-        //console.log(form);
-    }
+  // Função para realizar o logout do usuário
+  function handleLogout(event){
+    event.preventDefault();
 
-    function handleSearch(e){
-        e.preventDefault();
+    // Zera o token e o Id user na sessão
+    setToken('');
+    setIdUser('');
 
-        navigate(`/search/${form.search}`);
-    }
-  
-    return (
+    // Faz o redirect para a home
+    navigate('/');
+  }
+
+  function onChange(event){
+
+    // Desestruturação do nome e valor da propriedade do campo
+    const { value, name } = event.target;
+
+    // Pega o valor antigo e adiciona o novo que veio
+    setForm({ ...form, [name]: value});
+
+    //console.log(form);
+  }
+
+  function handleSearch(){
+    navigate(`/search/${form.search}`);
+  }
+
+  return (
     <>
       <header className="py-1 px-2">
         <nav>
@@ -72,16 +100,41 @@ const Header = () => {
               <button className="btn-search"></button>
             </form>
           </div>
-          <div className="cta-desktop ml-3">
-            <Link to="/login" className="btn">
-              Login
-            </Link>
-          </div>
-          <div className="cta-mobile mr-1">
-            <Link to="/login" className="link">
-              Login
-            </Link>
-          </div>
+          {!token ? (
+            <>
+              <div className="cta-desktop ml-3">
+                <Link to="/login" className="btn">
+                  Login
+                </Link>
+              </div>
+              <div className="cta-mobile mr-1">
+                <Link to="/login" className="link">
+                  Login
+                </Link>
+              </div>
+            </>
+          ) : (
+            <>
+              <div className="cta-desktop ml-3">
+                <Link to="/profile" className="link">
+                  {nameUser}
+                </Link>
+                <span> &nbsp; | &nbsp;</span>
+                <a href="#" onClick={handleLogout} className="link">
+                  Sair
+                </a>
+              </div>
+              <div className="cta-mobile mr-1">
+                <Link to="/profile" className="link">
+                  {nameUser}
+                </Link>
+                <span> &nbsp; | &nbsp;</span>
+                <a href="#" onClick={handleLogout} className="link">
+                  Sair
+                </a>
+              </div>
+            </>
+          )}
         </div>
       </header>
 
