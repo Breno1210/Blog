@@ -30,6 +30,7 @@ const Paths = () => {
           <Route path="/about" element={<About/>}/>
           <Route path="/contact" element={<Contact/>}/>
           <Route path="/login" element={<Login/>}/>
+          <Route path="/profile" element={<Profile/>}/>
 
           {/* <Route path="profile" 
           element={
@@ -39,7 +40,7 @@ const Paths = () => {
           } />  */} 
 
           <Route path="/description" element={<PostDescription/>}/>
-          <Route path="/search/:word_search" element={<Search/>}/>
+          <Route path="/search" element={<Search/>}/>
 
           <Route path="*" element={<NotFound/>}/>
         </Routes>

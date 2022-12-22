@@ -1,8 +1,12 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 //COMPONENTS
 import Header from "Components/header";
 import Footer from "Components/footer";
+
+//SVGS E IMGS
+import logo from 'svg/blog-logo2.svg'
 
 const NotFound = () => {
   return (
@@ -10,7 +14,7 @@ const NotFound = () => {
       <Header />
       <section className="container">
         <div className="row flex-center">
-          <img src="svg/blog-logo2.svg" className="icon-l" alt="" />
+          <img src={logo} className="icon-l" alt="" />
         </div>
 
         <div className="row">
@@ -23,9 +27,9 @@ const NotFound = () => {
               para voltar para o site.
             </p>
 
-            <a href="" className="btn w-100 mt-3">
+            <Link to='/' className="btn w-100 mt-3">
               Voltar p/ home
-            </a>
+            </Link>
           </div>
           <div className="grid-4 disappear"></div>
         </div>

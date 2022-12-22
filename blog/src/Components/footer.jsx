@@ -16,7 +16,8 @@ const Footer = () => {
         <footer className="bg-section bt-black">
             <section className="container pb-0 ">
                 <div className="row flex-center">
-                    <img src={logo} className="icon" alt="" />
+                    <Link to='/'><img src={logo} className="icon" alt="" /></Link>
+                    
                 </div>
                 <h4 className='text-center'>blog<span>.</span></h4>
 

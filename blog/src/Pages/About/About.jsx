@@ -4,16 +4,17 @@ import Footer from "Components/footer";
 
 //IMPORTS REACTS
 import SVGInject from "@iconfu/svg-inject";
+import { Link } from "react-router-dom";
 
 //SVGS E IMGS
 import bgSobre from "img/bg-sobre.jpg";
-import iconLogo from 'svg/blog-logo.svg'
+import iconLogo from "svg/blog-logo.svg";
 
 const About = () => {
   return (
     <>
-        <Header />
-        <img
+      <Header />
+      <img
         src={bgSobre}
         className="bg-sobre mt--110"
         alt=""
@@ -24,7 +25,9 @@ const About = () => {
       <section className="container">
         <div data-aos="fade-down" data-aos-delay="200">
           <div className="row flex-center mt-7">
-            <img src={iconLogo} className="icon-xl mb-2" alt="" />
+            <Link to="/">
+              <img src={iconLogo} className="icon-xl mb-2" alt="" />
+            </Link>
           </div>
 
           <h3 className="text-center uppercase bold">Quem Somos?</h3>
@@ -45,12 +48,11 @@ const About = () => {
             </p>
           </div>
         </div>
-
       </section>
 
       <Footer />
     </>
-  )
-}
+  );
+};
 
-export default About
+export default About;

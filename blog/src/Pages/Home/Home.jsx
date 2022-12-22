@@ -10,7 +10,6 @@ import Banner from "Components/banner";
 
 //SVGS E IMGS
 import iconStar from "svg/icon-star.svg";
-import profile from "img/profile/ny.jpg";
 
 //API
 import api from "services/api";

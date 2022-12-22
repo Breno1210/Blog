@@ -48,3 +48,48 @@
   transition: .5s ease;
 
 }
+
+.icon-user{
+  cursor: pointer;
+  position: absolute;
+  top: 8%;
+  left: 2%;
+  
+  height: 48px;
+  width: 35px;
+
+  background-repeat: no-repeat;
+  background-position: center center;
+
+  transform: translate3d(-6px, 0, 0);
+
+  border: 0;
+  border-radius: 4px;
+
+  @include responsive(s){
+    top: 7%;
+  }
+}
+
+.icon-password{
+  cursor: pointer;
+  position: absolute;
+  top: 39%;
+  left: 2%;
+  
+  height: 48px;
+  width: 35px;
+
+  background-repeat: no-repeat;
+  background-position: center center;
+
+  transform: translate3d(-6px, 0, 0);
+
+  border: 0;
+  border-radius: 4px;
+
+  @include responsive(s){
+    top: 35.5%;
+  }
+}
+

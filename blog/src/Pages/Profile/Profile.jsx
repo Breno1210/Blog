@@ -1,14 +1,21 @@
 import React from "react";
 
+//COMPONENTS
+import Header from "Components/header";
+import Footer from "Components/footer";
+
+import ImgProfile from "img/profile/ny.jpg";
+
 const Profile = () => {
   return (
     <>
+      <Header />
       <section className="container">
         <div className="row">
           <div className="grid-6">
             <div className="flex-start-row">
               <div className="profile-big">
-                <img src="profile/ny.jpg" className="profile-img" alt="" />
+                <img src={ImgProfile} className="profile-img" alt="" />
               </div>
               <div className="ml-2">
                 <h3 className="color-white">Násser Yousef Ali</h3>
@@ -82,6 +89,7 @@ const Profile = () => {
           <button className="btn">Adicionar</button>
         </div>
       </section>
+      <Footer />
     </>
   );
 };
