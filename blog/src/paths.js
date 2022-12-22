@@ -39,7 +39,7 @@ const Paths = () => {
               </PrivateRoute>
           } />  */} 
 
-          <Route path="/description" element={<PostDescription/>}/>
+          <Route path="/description/:idPost" element={<PostDescription/>}/>
           <Route path="/search" element={<Search/>}/>
 
           <Route path="*" element={<NotFound/>}/>

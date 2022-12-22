@@ -1,6 +1,5 @@
-//React
-import React from "react";
-import { Link } from "react-router-dom";
+//React router dom
+import { Link, useParams } from "react-router-dom";
 
 //COMPONENTS
 import Header from "Components/header";
@@ -14,51 +13,71 @@ import iconInstagram from "svg/icon-instagram.svg";
 import iconYoutube from "svg/icon-youtube.svg";
 import iconTwitter from "svg/icon-twitter.svg";
 
+//api
+import api from 'services/api';
+
+//Hooks
+import { useState, useEffect } from "react";
+
 const PostDescription = () => {
+
+  //Variavel de estado
+  const [post, setPost] = useState([]);
+  const [user, setUser] = useState([]);
+
+  const { idPost } = useParams();
+
+  useEffect(() => {
+    if(idPost){
+      api.get("/posts/" + idPost)
+      .then((response) => {
+        setPost(response.data);
+
+        api.get("/user/" + response.data.id_user)
+        .then((r) => {
+          setUser(r.data);
+        })
+      })
+    }
+  },[]);
+
   return (
     <>
       <Header />
       <section className="hidden">
         <div className="">
-          <img src={bgDescription} className="bg-description " alt="" />
+          <img src={post.imageUrl} className="bg-description mt--110" alt="" />
         </div>
         <div className="container relative mt--110">
           <div className="flex-center">
             <Link className="btn uppercase color-primary flex-center mb-2">
-              GAMES
+              {post.category}
             </Link>
           </div>
 
-          <h3 className="text-center">O que tem de novo no PS5??</h3>
+          <h3 className="text-center">{post.title}</h3>
           <p className="text-center mt-3 mb-3">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ornare urna
-            pharetra ut ac, pellentesque.{" "}
+            {post.resume}
           </p>
 
           <div className="flex-center my-3">
             <div className="profile">
-              <img src={ImgProfile} className="profile-img" alt="" />
+              <img src={user.ImageProfile} className="profile-img" alt="" />
             </div>
-            <div className="ml-2">
-              <h6 className="color-primary">Násser Yousef Ali</h6>
-              <h6 className="color-gray">Author</h6>
+            <div className="ml-2 mt-3">
+              <h6 className="color-primary">{user.name} {user.surname}</h6>
+              <h6 className="color-gray">{user.user}</h6>
             </div>
             <div className="dot ml-4 mr-2"></div>
-            <p className="ml-4">Aug 2, 2020 - 8 min read</p>
+            <p className="ml-4">{post.date} - {post.duration} min read</p>
           </div>
 
           <div className="row my-3">
             <div className="grid-3 disappear"></div>
             <div className="grid-6 mt-11">
-              <h4>Esse aqui é o primeiro título</h4>
-              <p className="mt-1">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ornare
-                urna pharetra ut ac, pellentesque. Ultricies habitasse pretium
-                purus viverra. Sit eget volutpat semper vitae metus, fringilla
-                ullamcorper sapien nibh. Lorem ipsum dolor sit amet, consectetur
-                adipiscing elit. Ornare urna pharetra ut ac, pellentesque.
-                Ultricies habitasse pretium purus viverra. Sit eget volutpat
-                semper vitae metus, fringilla ullamcorper sapien nibh.
+              <h4 className="text-center">{post.title}</h4>
+              <p className="mt-3">
+                {post.content}
               </p>
             </div>
             <div className="grid-3 disappear"></div>
@@ -70,13 +89,13 @@ const PostDescription = () => {
               <div className="row">
                 <div className="grid-3 flex-center pl-1">
                   <div className="profile-big">
-                    <img src={ImgProfile} className="profile-img" alt="" />
+                    <img src={user.ImageProfile} className="profile-img" alt="" />
                   </div>
                 </div>
                 <div className="grid-9">
                   <div className="">
-                    <h6 className="color-primary">Násser Yousef Ali</h6>
-                    <h6 className="color-gray">Author</h6>
+                    <h6 className="color-primary">{user.name} {user.surname}</h6>
+                    <h6 className="color-gray">{user.user}</h6>
                     <div className="flex-end-row t">
                       <img src={iconFacebook} className="icon-s" alt="" />
                       <img src={iconInstagram} className="icon-s ml-1" alt="" />
@@ -85,10 +104,7 @@ const PostDescription = () => {
                     </div>
                   </div>
                   <p className="mt-5">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Ornare urna pharetra ut ac, pellentesque. Ultricies
-                    habitasse pretium purus viverra. Sit eget volutpat semper
-                    vitae metus, fringilla ullamcorper sapien nibh.
+                    {user.description}
                   </p>
                 </div>
               </div>

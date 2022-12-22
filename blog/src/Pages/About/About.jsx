@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 
 //SVGS E IMGS
 import bgSobre from "img/bg-sobre.jpg";
-import iconLogo from "svg/blog-logo.svg";
+import iconLogo from "svg/blog-logo2.svg";
 
 const About = () => {
   return (

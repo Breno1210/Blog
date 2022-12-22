@@ -406,11 +406,13 @@ $gutter: 32px;
 
 .bg-description {
   z-index: -1;
+  opacity: 0.3;
 
   @include responsive(s) {
     display: none;
   }
 }
+
 .t{
   margin-top: -57px;
 }
