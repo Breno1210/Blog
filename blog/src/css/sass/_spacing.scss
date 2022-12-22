@@ -8,6 +8,8 @@ $gap-6: 64px;
 $gap-7: 72px;
 $gap-8: 96px;
 $gap-9: 128px;
+$gap-10: 160px;
+$gap-11: 192px;
 
 .s-0 {
   margin: 0;
@@ -97,6 +99,14 @@ $gap-9: 128px;
 .m-9 {
   margin: $gap-9 !important;
 }
+.m-10 {
+  margin: $gap-10 !important;
+}
+.m-11 {
+  margin: $gap-11 !important;
+}
+
+
 
 
 
@@ -130,6 +140,12 @@ $gap-9: 128px;
 .mt-9 {
   margin-top: $gap-9 !important;
 }
+.mt-10 {
+  margin-top: $gap-10 !important;
+}
+.mt-11 {
+  margin-top: $gap-11 !important;
+}
 
 
 .ml-0 {
@@ -161,6 +177,12 @@ $gap-9: 128px;
 }
 .ml-9 {
   margin-left: $gap-9 !important;
+}
+.ml-10 {
+  margin-top: $gap-10 !important;
+}
+.ml-11 {
+  margin-top: $gap-11 !important;
 }
 
 
@@ -194,6 +216,12 @@ $gap-9: 128px;
 .mr-9 {
   margin-right: $gap-9 !important;
 }
+.mr-10 {
+  margin-top: $gap-10 !important;
+}
+.mr-11 {
+  margin-top: $gap-11 !important;
+}
 
 
 .mb-0 {
@@ -225,6 +253,12 @@ $gap-9: 128px;
 }
 .mb-9 {
   margin-bottom: $gap-9 !important;
+}
+.mb-10 {
+  margin-top: $gap-10 !important;
+}
+.mb-11 {
+  margin-top: $gap-11 !important;
 }
 
 
@@ -267,6 +301,12 @@ $gap-9: 128px;
 .mx-9 {
   margin-left: $gap-9 !important;
   margin-right: $gap-9 !important;
+}
+.mx-10 {
+  margin-top: $gap-10 !important;
+}
+.mx-11 {
+  margin-top: $gap-11 !important;
 }
 
 

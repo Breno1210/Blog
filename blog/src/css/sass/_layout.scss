@@ -403,3 +403,14 @@ $gutter: 32px;
     display: none;
   }
 }
+
+.bg-description {
+  z-index: -1;
+
+  @include responsive(s) {
+    display: none;
+  }
+}
+.t{
+  margin-top: -57px;
+}

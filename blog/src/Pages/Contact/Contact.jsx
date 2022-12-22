@@ -1,5 +1,9 @@
 import React from 'react'
 
+//COMPONENTS
+import Header from "Components/header";
+import Footer from "Components/footer";
+
 //SVGS e IMGS
 import iconFacebook from 'svg/icon-facebook.svg';
 import iconInstagram from 'svg/icon-instagram.svg';
@@ -8,9 +12,10 @@ import iconTwitter from 'svg/icon-twitter.svg';
 
 const Contact = () => {
   return (
-    <>
-        <section className="container">
-        <div className="row">
+    <>  
+        <Header />
+        <section className="container mb-5">
+        <div className="row mt-4">
           <div className="grid-6" data-aos="fade-down" data-aos-delay="400">
             <h3>Entre em contato</h3>
             <p className="mt-1">
@@ -57,38 +62,34 @@ const Contact = () => {
 
             <h6 className="color-primary mt-4">Info.</h6>
             <p>
-              O Laboratório de Estudos em Avaliação Psicológica (LEAPS) foi
-              criado pela faculdade de psicologia (Fapsi) da PUC Minas - Praça
-              da Liberdade, para atender e oferecer suporte aos alunos da
-              unidade que buscam conhecimento sobre os temas da Avaliação
-              Psicológica.
+              Projeto Blog em React.js do curso FrontPush
             </p>
 
             <h6 className="color-primary mt-4">Endereço</h6>
             <p>
-              Sala 1101- Prédio 3 (PIC) Rua Cláudio Manoel, n° 1185, <br />
-              Belo Horizonte - MG
+              Brasília, DF
             </p>
 
             <h6 className="color-primary mt-4">E-mail</h6>
-            <p>leaps.pucpraca@gmail.com</p>
+            <p>email@gmail.com</p>
 
             <h6 className="color-primary mt-4">Redes sociais</h6>
             <div className="mt-2">
               <a
-                href="https://www.instagram.com/leaps_praca/"
+                href="https://www.instagram.com/nasseryousef__/?hl=pt-br"
                 target={"_blank"}
                 rel="noreferrer"
               >
                 <img src={iconFacebook} className="icon-s" alt="" />
-                <img src={iconInstagram} className="icon-s" alt="" />
-                <img src={iconYoutube} className="icon-s" alt="" />
-                <img src={iconTwitter} className="icon-s" alt="" />
+                <img src={iconInstagram} className="icon-s ml-1" alt="" />
+                <img src={iconYoutube} className="icon-s ml-1" alt="" />
+                <img src={iconTwitter} className="icon-s ml-1" alt="" />
               </a>
             </div>
           </div>
         </div>
       </section>
+      <Footer />
     </>
   )
 }

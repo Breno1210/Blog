@@ -552,6 +552,19 @@
   }
 }
 
+.bg-description {
+  z-index: -1;
+}
+@media screen and (max-width: 960px) {
+  .bg-description {
+    display: none;
+  }
+}
+
+.t {
+  margin-top: -57px;
+}
+
 .s-0 {
   margin: 0;
   padding: 0;
@@ -651,6 +664,14 @@
   margin: 128px !important;
 }
 
+.m-10 {
+  margin: 160px !important;
+}
+
+.m-11 {
+  margin: 192px !important;
+}
+
 .mt-0 {
   margin-top: 0 !important;
 }
@@ -689,6 +710,14 @@
 
 .mt-9 {
   margin-top: 128px !important;
+}
+
+.mt-10 {
+  margin-top: 160px !important;
+}
+
+.mt-11 {
+  margin-top: 192px !important;
 }
 
 .ml-0 {
@@ -731,6 +760,14 @@
   margin-left: 128px !important;
 }
 
+.ml-10 {
+  margin-top: 160px !important;
+}
+
+.ml-11 {
+  margin-top: 192px !important;
+}
+
 .mr-0 {
   margin-right: 0 !important;
 }
@@ -771,6 +808,14 @@
   margin-right: 128px !important;
 }
 
+.mr-10 {
+  margin-top: 160px !important;
+}
+
+.mr-11 {
+  margin-top: 192px !important;
+}
+
 .mb-0 {
   margin-bottom: 0 !important;
 }
@@ -809,6 +854,14 @@
 
 .mb-9 {
   margin-bottom: 128px !important;
+}
+
+.mb-10 {
+  margin-top: 160px !important;
+}
+
+.mb-11 {
+  margin-top: 192px !important;
 }
 
 .mx-0 {
@@ -859,6 +912,14 @@
 .mx-9 {
   margin-left: 128px !important;
   margin-right: 128px !important;
+}
+
+.mx-10 {
+  margin-top: 160px !important;
+}
+
+.mx-11 {
+  margin-top: 192px !important;
 }
 
 .my-0 {
@@ -1596,6 +1657,13 @@ b {
     font-weight: 500;
     font-size: 96px;
   }
+}
+
+.dot {
+  width: 6px;
+  height: 6px;
+  background-color: #fff;
+  border-radius: 50%;
 }
 
 html {

@@ -1,8 +1,13 @@
 import React from "react";
 
+//COMPONENTS
+import Header from "Components/header";
+import Footer from "Components/footer";
+
 const NotFound = () => {
   return (
     <>
+      <Header />
       <section className="container">
         <div className="row flex-center">
           <img src="svg/blog-logo2.svg" className="icon-l" alt="" />
@@ -25,6 +30,7 @@ const NotFound = () => {
           <div className="grid-4 disappear"></div>
         </div>
       </section>
+      <Footer />
     </>
   );
 };

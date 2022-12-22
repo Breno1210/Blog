@@ -27,9 +27,9 @@ const Paths = () => {
     <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home/>}/>
-          <Route path="about" element={<About/>}/>
-          <Route path="contact" element={<Contact/>}/>
-          <Route path="login" element={<Login/>}/>
+          <Route path="/about" element={<About/>}/>
+          <Route path="/contact" element={<Contact/>}/>
+          <Route path="/login" element={<Login/>}/>
 
           {/* <Route path="profile" 
           element={
@@ -38,8 +38,8 @@ const Paths = () => {
               </PrivateRoute>
           } />  */} 
 
-          <Route path="post/:idPost" element={<PostDescription/>}/>
-          <Route path="search/:word_search" element={<Search/>}/>
+          <Route path="/description" element={<PostDescription/>}/>
+          <Route path="/search/:word_search" element={<Search/>}/>
 
           <Route path="*" element={<NotFound/>}/>
         </Routes>
