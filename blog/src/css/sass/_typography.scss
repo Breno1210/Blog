@@ -193,6 +193,7 @@
   @include typeface-1(h0, desktop);
   @include responsive(s) {
     @include typeface-1(h0, mobile);
+    text-align: center;
   }
   @include responsive(xs) {
     @include typeface-1(h0, smallmobile);

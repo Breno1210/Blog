@@ -4,9 +4,6 @@ import { useState, useEffect} from "react";
 // API
 import api from 'services/api';
 
-//SVGS E IMGS
-import profile from 'img/profile/ny.jpg';
-
 const Main = ( {content}) => {
 
   const [user, setUser] = useState([]);
@@ -18,7 +15,7 @@ const Main = ( {content}) => {
         setUser(response.data);
       })
     }
-  },[]);
+  }, []);
 
   return (
     <>

@@ -14,6 +14,22 @@ $gap-9: 128px;
   padding: 0;
 }
 
+.mt--50{
+  margin-top: -15px;
+
+  @include responsive(s){
+    margin-top: 0px;
+  }
+}
+
+.mt--110{
+  margin-top: -410px;
+
+  @include responsive(s){
+    margin-top: 0px;
+  }
+}
+
 .mt-110{
   margin-top: 110px;
 

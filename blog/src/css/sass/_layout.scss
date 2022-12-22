@@ -394,3 +394,12 @@ $gutter: 32px;
 
   background-color: rgba(27, 105, 210, 0.2);
 }
+
+.bg-sobre {
+  position: absolute;
+  z-index: -1;
+
+  @include responsive(s) {
+    display: none;
+  }
+}

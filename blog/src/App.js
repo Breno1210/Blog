@@ -1,8 +1,8 @@
+//IMPORTS REACTS
 import { useEffect } from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 //Pages
-import Home from "Pages/Home/Home";
+import Paths from "paths";
 
 function App() {
   // useEffect para carregar o script do menu responsivo
@@ -23,11 +23,7 @@ function App() {
   
   return (
     <>
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Home />}></Route>
-        </Routes>
-      </BrowserRouter>
+      <Paths />
     </>
   );
 }

@@ -116,3 +116,9 @@ select{
   
 }
 
+.btn-start{
+  @include responsive(s){
+    width: 100%;
+  }
+}
+

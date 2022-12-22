@@ -1,5 +1,3 @@
-
-
 const bx = document.querySelector('.bx');
 const menu_mobile = document.querySelector('.menu-mobile');
 const link_mobile = document.querySelectorAll('.link-menu-mobile');

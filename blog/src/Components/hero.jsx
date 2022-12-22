@@ -16,7 +16,7 @@ const Hero = () => {
                     Um blog para todos. 
                     Escrever. Ler. Comentar. Contribuir. Aprender. Conectar.
                 </p>
-                <Link href="" className="btn mt-2">Começar a escrever</Link>
+                <Link href="" className="btn btn-start mt-2">Começar a escrever</Link>
 
             </div>
             <div className="grid-1"></div>

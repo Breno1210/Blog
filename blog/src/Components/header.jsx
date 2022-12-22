@@ -16,8 +16,8 @@ const Header = () => {
             </div>
             <ul className="menu">
                 <li><Link to='/' className="p-1">Categorias</Link></li>
-                <li><Link to='/' className="p-1">Sobre</Link></li>
-                <li><Link to='/' className="p-1">Contato</Link></li>
+                <li><Link to='/about' className="p-1">Sobre</Link></li>
+                <li><Link to='/contact' className="p-1">Contato</Link></li>
             </ul>
         </nav>
         <div className="bx"></div>
@@ -30,10 +30,10 @@ const Header = () => {
                 
             </div>
             <div className="cta-desktop ml-3">
-                <Link href="" className="btn">Login</Link>
+                <Link to='/login' className="btn">Login</Link>
             </div>
             <div className="cta-mobile mr-1">
-                <Link href="" className="link">Login</Link>
+                <Link to='/login' className="link">Login</Link>
             </div>
         </div>
     </header>
@@ -41,9 +41,9 @@ const Header = () => {
     <div className="relative">
         <div className="menu-mobile">
             <ul className="nav-mobile">
-                <li><Link href="#" className="link-menu-mobile">Categorias</Link></li>
-                <li><Link href="#" className="link-menu-mobile">Sobre</Link></li>
-                <li><Link href="#" className="link-menu-mobile">Contato</Link></li>
+                <li><Link to='/' className="link-menu-mobile">Categorias</Link></li>
+                <li><Link to='/about' className="link-menu-mobile">Sobre</Link></li>
+                <li><Link to='/contact' className="link-menu-mobile">Contato</Link></li>
                 <li className="py-2 pl-2">
                     <form className="flex">
                         <input type="text" name="search" id="" placeholder="Buscar..." />
