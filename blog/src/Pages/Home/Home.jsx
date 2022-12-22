@@ -1,5 +1,5 @@
 //IMPORTS REACT
-import { React, useEffect } from "react";
+import { React} from "react";
 
 //IMPORT COMPONENTS
 import Header from "Components/header";
@@ -14,27 +14,7 @@ import iconStar from "svg/icon-star.svg";
 import profile from "img/profile/ny.jpg";
 
 const Home = () => {
-  //Função Menu Mobile
-  useEffect(() => {
-    const bx = document.querySelector(".bx");
-    const menu_mobile = document.querySelector(".menu-mobile");
-    const link_mobile = document.querySelectorAll(".link-menu-mobile");
-
-    link_mobile.forEach((item) => {
-      item.addEventListener("click", () => {
-        menu_mobile.classList.add("showmenu");
-      });
-    });
-
-    bx.addEventListener("click", () => {
-      bx.classList.toggle("activebx");
-
-      menu_mobile.classList.toggle("showmenu");
-
-      console.log("Clicou no bx");
-    });
-  });
-
+  
   return (
     <>
       <Header />
