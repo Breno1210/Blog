@@ -9,7 +9,11 @@ import Card from "Components/card";
 import Banner from "Components/banner";
 import Highlights from "Components/highlights";
 import Morelikes from "Components/morelikes";
+import Morecategory from "Components/morecategory";
 import Mostrecent from "Components/mostrecent";
+import People from "Components/people";
+import Newletters from "Components/newletters";
+import Sponsorednews from "Components/sponsorednews";
 
 //SVGS E IMGS
 import iconStar from "svg/icon-star.svg";
@@ -54,7 +58,15 @@ const Home = () => {
 
       <Morelikes />
 
+      <Morecategory />
+
       <Mostrecent />
+
+      <People />
+
+      <Newletters />
+
+      <Sponsorednews />
 
       <section className="container">
         <div className="row">

@@ -746,6 +746,10 @@
   margin-top: 192px !important;
 }
 
+.mt-12 {
+  margin-top: 224px !important;
+}
+
 .ml-0 {
   margin-left: 0 !important;
 }
@@ -1962,8 +1966,12 @@ nav {
   }
 }
 
-.ilustration {
+/* .ilustration{
   max-width: 360px;
+  transition: .5s ease;
+} */
+.ilustration {
+  max-width: 180px;
   transition: 0.5s ease;
 }
 
@@ -2012,6 +2020,26 @@ nav {
 @media screen and (max-width: 960px) {
   .icon-arrowRight {
     max-width: 18px;
+  }
+}
+
+.icon-arrowRight2 {
+  max-width: 16px;
+  transition: 0.5s ease;
+}
+@media screen and (max-width: 960px) {
+  .icon-arrowRight2 {
+    max-width: 24px;
+  }
+}
+
+.icon-arrowDiagonalRight {
+  max-width: 10px;
+  transition: 0.5s ease;
+}
+@media screen and (max-width: 960px) {
+  .icon-arrowDiagonalRight {
+    max-width: 12px;
   }
 }
 
