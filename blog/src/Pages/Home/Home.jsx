@@ -7,6 +7,8 @@ import Hero from "Components/hero";
 import Main from "Components/main";
 import Card from "Components/card";
 import Banner from "Components/banner";
+import Highlights from "Components/highlights";
+import Morelikes from "Components/morelikes";
 
 //SVGS E IMGS
 import iconStar from "svg/icon-star.svg";
@@ -46,6 +48,10 @@ const Home = () => {
       <Header />
 
       <Hero />
+
+      <Highlights />
+
+      <Morelikes />
 
       <section className="container">
         <div className="row">

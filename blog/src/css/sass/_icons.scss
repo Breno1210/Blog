@@ -93,3 +93,11 @@
   }
 }
 
+.icon-arrowRight{
+  max-width: 8px;
+  transition: .5s ease;
+
+  @include responsive(s){
+    max-width: 18px;
+  }
+}
