@@ -9,6 +9,7 @@ import Card from "Components/card";
 import Banner from "Components/banner";
 import Highlights from "Components/highlights";
 import Morelikes from "Components/morelikes";
+import Mostrecent from "Components/mostrecent";
 
 //SVGS E IMGS
 import iconStar from "svg/icon-star.svg";
@@ -52,6 +53,8 @@ const Home = () => {
       <Highlights />
 
       <Morelikes />
+
+      <Mostrecent />
 
       <section className="container">
         <div className="row">

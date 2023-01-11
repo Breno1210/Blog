@@ -339,6 +339,18 @@ $gutter: 32px;
   }
 }
 
+.thumb-reverse{
+  img{
+    transition: .5s ease;
+  }
+  
+  &:hover{
+    img{
+      transform: scale(0.97);
+    }
+  }
+}
+
 .img-banner{
   width: 100%;
   max-height: 420px;
