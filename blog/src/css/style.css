@@ -23,6 +23,10 @@
   color: #717274;
 }
 
+.color-black {
+  color: #06090F;
+}
+
 .color-red {
   color: #F03D3D;
 }
@@ -584,7 +588,7 @@
 
 .trending-card {
   width: 280px;
-  height: 72px;
+  height: 124px;
 }
 
 .s-0 {

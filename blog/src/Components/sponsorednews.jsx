@@ -17,7 +17,7 @@ const Sponsorednews = () => {
   //Faça isso quando o componente montar
   useEffect(() => {
     //Requisição de Posts mais vistos
-    api.get("/posts?_limit=3").then((response) => {
+    api.get("/posts?sponsored=true&_limit=3").then((response) => {
       setMostSeen(response.data);
     });
   }, []);

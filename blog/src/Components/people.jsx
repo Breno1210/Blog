@@ -26,11 +26,12 @@ const People = () => {
           </div>
           <div className="flex-center">
             <h2 className="mt-1 mb-1">
-                Nossos colunistas<span>.</span>
+              Nossos colunistas<span>.</span>
             </h2>
           </div>
           <p className="text-center">
-            Os melhores em conteúdo, Clique e veja mais sobre os artigos de cada um.
+            Os melhores em conteúdo, Clique e veja mais sobre os artigos de cada
+            um.
           </p>
         </div>
         <div
@@ -51,9 +52,10 @@ const People = () => {
             modules={[Autoplay, Pagination, Navigation]}
             className="mySwiper"
           >
-            <SwiperSlide className="">
-              <div className="relative br-6">
-                <img src={imgPeople1} className="absolute" alt="" />
+            <SwiperSlide>
+              <div className="relative br-6 thumb">
+                  <img src={imgPeople1} className="absolute" alt="" />
+                
                 <div className="p-2">
                   <div className="mt-12">
                     <Link className="btn-high uppercase">Fotografia</Link>
@@ -64,7 +66,7 @@ const People = () => {
               </div>
             </SwiperSlide>
             <SwiperSlide>
-            <div className="relative br-6">
+              <div className="relative br-6 thumb">
                 <img src={imgPeople2} className="absolute" alt="" />
                 <div className="p-2">
                   <div className="mt-12">
@@ -76,7 +78,7 @@ const People = () => {
               </div>
             </SwiperSlide>
             <SwiperSlide>
-            <div className="relative br-6">
+              <div className="relative br-6 thumb">
                 <img src={imgPeople3} className="absolute" alt="" />
                 <div className="p-2">
                   <div className="mt-12">
@@ -88,7 +90,7 @@ const People = () => {
               </div>
             </SwiperSlide>
             <SwiperSlide>
-            <div className="relative br-6">
+              <div className="relative br-6 thumb">
                 <img src={imgPeople4} className="absolute" alt="" />
                 <div className="p-2">
                   <div className="mt-12">

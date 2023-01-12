@@ -1,13 +1,20 @@
 //IMPORTS REACT
-import React from "react";
-import { Link } from "react-router-dom";
+import { useEffect } from "react";
+import { Link, useLocation } from "react-router-dom";
 
 const Card = ({ content }) => {
+  const routePath = useLocation();
+  const onTop = () => {
+    window.scrollTo(0, 0);
+  }
+  useEffect(() => {
+    onTop()
+  }, [routePath]);
   return (
     <>
       <div className="grid-4 card hidden p-0">
         <div className="thumb hidden">
-          <Link href="" className="p-0">
+          <Link to={"/description/" + content.id} onClick={onTop} className="p-0">
             <img src={content.imageUrl} alt="" />
           </Link>
         </div>
@@ -16,15 +23,16 @@ const Card = ({ content }) => {
           <h6 className="uppercase color-primary btn-high">
             {content.category}
           </h6>
-          <Link href="" className="link-title">
+          <Link to={"/description/" + content.id} onClick={onTop} className="link-title">
             <h4 className="mt-1">{content.title}</h4>
           </Link>
 
           <p className="my-2">{content.resume}</p>
           <div className="flex-space">
             <div className="flex-start-row">
-              <Link href="" className="link p-0">
-                Ler mais
+              <Link to={"/description/" + content.id} onClick={onTop} className="link p-0">
+                <a href="#topo"><span>Ler mais</span></a>
+                
               </Link>
             </div>
 
