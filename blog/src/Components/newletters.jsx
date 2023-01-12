@@ -21,7 +21,7 @@ const Newletters = () => {
             <p className="p5 mt-1">No spam, notifications, only about new products and updates. You can always unsubscribe.</p>
           </div>
           <div className="grid-2 p-0">
-            <Link className="btn">Cadastrar</Link>
+            <Link className="btn responsive-btn">Cadastrar</Link>
           </div>
         </div>
       </section>

@@ -34,6 +34,7 @@ const People = () => {
             um.
           </p>
         </div>
+
         <div
           className="flex-center mt-5"
           data-aos="fade-down"
@@ -110,3 +111,4 @@ const People = () => {
 };
 
 export default People;
+

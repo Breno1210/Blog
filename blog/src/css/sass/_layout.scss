@@ -12,45 +12,51 @@ $gutter: 32px;
 @mixin responsive($device) {
 
 
-  @if $device == xl {
+  @if $device ==xl {
+
     // For resolutions upper 1440px
     @media screen and (min-width: $container-xl) {
       @content;
     }
-  } 
+  }
 
-  @else if $device == ul {
+  @else if $device ==ul {
+
     // For resolutions upper 960px
     @media screen and (min-width: $container-m) {
       @content;
     }
-  } 
-  
-  @else if $device == l {
+  }
+
+  @else if $device ==l {
+
     // For resolutions between 1140px and 1440px
     @media screen and (max-width: $container-xl) and (min-width: $container-l) {
       @content;
     }
-  } 
-  
-  
-  @else if $device == m {
+  }
+
+
+  @else if $device ==m {
+
     // For resolutions between 960px and 1140px
     @media screen and (max-width: $container-l) and (min-width: $container-s) {
       @content;
     }
-  } 
-  
-  
-  @else if $device == s {
+  }
+
+
+  @else if $device ==s {
+
     // For resolutions less than 960px
     @media screen and (max-width: $container-m) {
       @content;
     }
-  } 
-  
-  
-  @else if $device == xs {
+  }
+
+
+  @else if $device ==xs {
+
     // For resolutions less than 340px
     @media screen and (max-width: $container-xs) {
       @content;
@@ -59,33 +65,33 @@ $gutter: 32px;
 }
 
 
-@function grid($col, $total: 12){
+@function grid($col, $total: 12) {
   @return ($col / $total) * 100%;
 }
 
 
-@for $i from 1 through 12{
-  .grid-#{$i}{
-      width: calc(#{grid($i)} - #{$gutter});
-      margin: $gutter / 2;
+@for $i from 1 through 12 {
+  .grid-#{$i} {
+    width: calc(#{grid($i)} - #{$gutter});
+    margin: $gutter / 2;
 
-      padding: 16px 0px;
-      float: left;
+    padding: 16px 0px;
+    float: left;
 
-      @include responsive(s){
-          width: calc(100% - #{$gutter});
-          float: none;
-      }
+    @include responsive(s) {
+      width: calc(100% - #{$gutter});
+      float: none;
+    }
   }
 }
 
-@for $i from 1 through 12{
-  .grid-nobreak-#{$i}{
-      width: calc(#{grid($i)} - #{$gutter});
-      margin: $gutter / 2;
+@for $i from 1 through 12 {
+  .grid-nobreak-#{$i} {
+    width: calc(#{grid($i)} - #{$gutter});
+    margin: $gutter / 2;
 
-      padding: 16px 0px;
-      float: left;
+    padding: 16px 0px;
+    float: left;
   }
 }
 
@@ -105,7 +111,7 @@ $gutter: 32px;
   //position: sticky;
 
   // clearfix
-  &::after{
+  &::after {
     content: '';
     display: table;
     clear: both;
@@ -118,31 +124,32 @@ $gutter: 32px;
   }
 }
 
-.hero{
+.hero {
   height: 70vh;
 }
 
-.disappear{
-  @include responsive(s){
+.disappear {
+  @include responsive(s) {
     display: none;
   }
 }
 
 
-.row{
+.row {
+
   // clearfix
-  &::after{
+  &::after {
     content: '';
     display: table;
     clear: both;
   }
 }
 
-.h-100{
+.h-100 {
   height: 100vh;
 }
 
-.h-100p{
+.h-100p {
   height: 100%;
 }
 
@@ -158,6 +165,7 @@ $gutter: 32px;
   flex-direction: row;
 
 }
+
 .flex-end-row {
   display: flex;
   justify-content: flex-end;
@@ -165,6 +173,7 @@ $gutter: 32px;
   flex-direction: row;
 
 }
+
 .flex-start-column {
   display: flex;
   justify-content: center;
@@ -192,7 +201,7 @@ $gutter: 32px;
   align-items: center;
   flex-direction: row;
 
-  @include responsive(s){
+  @include responsive(s) {
     //flex-direction: column;
     //align-items: flex-start;
   }
@@ -239,119 +248,124 @@ $gutter: 32px;
 .w-auto {
   width: auto;
 }
+
 .h-auto {
   height: auto !important;
 }
+
 .w-100 {
   width: 100%;
 }
+
 .w-75 {
   width: 75%;
 }
+
 .w-50 {
   width: 50%;
 }
+
 .w-25 {
   width: 25%;
 }
 
 
-.bb-black{
+.bb-black {
   border-bottom: 1px solid $black-light;
 }
 
-.bt-black{
+.bt-black {
   border-top: 1px solid $black-light;
 }
 
-.bl-black{
+.bl-black {
   border-left: 1px solid $black-light;
 }
 
-.br-black{
+.br-black {
   border-right: 1px solid $black-light;
 }
 
 
-.bg-gray{
+.bg-gray {
   background-color: $black-normal;
 }
 
-.bb-gray{
+.bb-gray {
   border-bottom: 2px solid $black-normal;
 }
 
-.bt-gray{
+.bt-gray {
   border-top: 2px solid $black-normal;
 }
 
-.bl-gray{
+.bl-gray {
   border-left: 2px solid $black-normal;
 }
 
-.br-gray{
+.br-gray {
   border-right: 2px solid $black-normal;
 }
 
 
-.profile{
+.profile {
   width: 48px;
   height: 48px;
 
   border-radius: 50%;
 }
 
-.profile-big{
+.profile-big {
   width: 128px;
   height: 128px;
 
   border-radius: 50%;
 }
 
-.profile-img{
+.profile-img {
   border-radius: 50%;
   border: 2px solid $primary-normal;
 }
 
-.card{
+.card {
   border: 1px solid $black-light;
   border-radius: 4px;
   background-color: rgba(15, 20, 31, 0);
 
   transition: .2s ease;
 
-  &:hover{
+  &:hover {
     background-color: rgba(15, 20, 31, 0.2);
   }
 }
 
-.thumb{
+.thumb {
 
-  img{
+  img {
     transform: scale(1.05);
     transition: .5s ease;
   }
-  
-  &:hover{
-    img{
+
+  &:hover {
+    img {
       transform: scale(1.1);
     }
   }
 }
 
-.thumb-reverse{
-  img{
+.thumb-reverse {
+  img {
     transition: .5s ease;
   }
-  
-  &:hover{
-    img{
+
+  &:hover {
+    img {
       transform: scale(0.97);
     }
   }
 }
 
-.img-banner{
+.img-banner {
   width: 100%;
   max-height: 420px;
 
@@ -362,45 +376,45 @@ $gutter: 32px;
   justify-content: center;
   align-items: center;
 
-  img{
+  img {
     object-fit: cover;
-    
+
     transition: .7s ease;
   }
 
-  &:hover{
-    img{
+  &:hover {
+    img {
       transform: scale(1.025);
     }
   }
 }
 
-.bg-section{
+.bg-section {
   background-color: rgba(15, 20, 31, 0.5);
 }
 
-.card-danger{
+.card-danger {
   border: 2px solid $red-normal;
   border-radius: 4px;
 
   background-color: rgba(240, 61, 61, 0.2);
 }
 
-.card-success{
+.card-success {
   border: 2px solid $green-normal;
   border-radius: 4px;
 
   background-color: rgba(11, 176, 123, 0.2);
 }
 
-.card-warning{
+.card-warning {
   border: 2px solid $yellow-normal;
   border-radius: 4px;
 
   background-color: rgba(255, 206, 82, 0.2);
 }
 
-.card-info{
+.card-info {
   border: 2px solid $primary-normal;
   border-radius: 4px;
 
@@ -425,26 +439,60 @@ $gutter: 32px;
   }
 }
 
-.t{
+.t {
   margin-top: -57px;
 }
 
-.card-1{
+.card-1 {
   border-radius: 6px;
 }
 
-.absolute{
+.absolute {
   position: absolute;
   z-index: -1;
 }
 
-.trending-card{
-  width: 280px;
-  height: 124px;
+.trending-card {
+  @include responsive(s) {
+    padding-top: 48px !important;
+    padding-bottom: 48px !important;
+  }
 }
 
-.imgHigh{
+.text-trending{
+  @include responsive(s) {
+    
+    font-size: 48px;
+  }
+}
+
+.imgHigh {
   width: 593px;
   height: 640px;
   position: absolute;
+}
+
+.img-netflix {
+  width: 800px;
+  height: 400px;
+}
+
+.img-keyboard {
+  width: 800px;
+}
+
+.text-category {
+  padding-top: 64px !important;
+  padding-bottom: 64px !important;
+
+  @include responsive(m) {
+    padding-top: 48px !important;
+    padding-bottom: 48px !important;
+  }
+}
+
+.img-category {
+  @include responsive(s) {
+    margin-left: 50%;
+  }
 }

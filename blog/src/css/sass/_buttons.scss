@@ -154,3 +154,9 @@ select{
   }
 }
 
+.responsive-btn{
+  @include responsive(s){
+    width: 100%;
+  }
+}
+

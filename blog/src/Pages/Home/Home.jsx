@@ -19,11 +19,11 @@ import Mostrecent1 from "Components/mostrecent1";
 import People from "Components/people";
 import Newletters from "Components/newletters";
 import Sponsorednews from "Components/sponsorednews";
+import Trendingtopics from "Components/trendingtopics";
 
 //SVGS E IMGS
 import iconStar from "svg/icon-star.svg";
-
-//SVGS E IMGS
+import iconLayer from "svg/icon-layers.svg";
 import iconLike from "svg/icon-like.svg";
 import iconArrowRight from "svg/icon-arrowright.svg";
 import iconRecent from "svg/icon-time.svg";
@@ -33,7 +33,6 @@ import api from "services/api";
 
 // Hooks
 import { useState, useEffect } from "react";
-import Trendingtopics from "Components/trendingtopics";
 
 const Home = () => {
   //Variáveis de estado
@@ -101,8 +100,8 @@ const Home = () => {
       setMostRecent(response.data);
     });
 
-     //Requisição de mais recentes
-     api.get("/posts?date=13 Jan 2023&_order=desc&_limit=1").then((response) => {
+    //Requisição de mais recentes
+    api.get("/posts?date=13 Jan 2023&_order=desc&_limit=1").then((response) => {
       setMostRecent1(response.data);
     });
   }, []);
@@ -112,6 +111,8 @@ const Home = () => {
       <Header />
 
       <Hero />
+
+      {/* =============== SECTION HIGHLIGHT =============== */}
       <section className="container">
         <div className="row ">
           <div className="flex-space">
@@ -156,6 +157,7 @@ const Home = () => {
         </div>
       </section>
 
+      {/* =============== MORE LIKES =============== */}
       <section className="container">
         <div className="row">
           <div className="flex-space">
@@ -195,17 +197,18 @@ const Home = () => {
             })}
           </div>
 
-          <div class="grid-3 br-6 hidden p-0 relative">
-            <h4>Tópicos em alta</h4>
-            {trendingTopics.map((item) => {
-              return <Trendingtopics key={item.id} content={item} />;
-            })}
-          </div>
+          <h4 className="py-4">Tópicos em alta</h4>
+          {trendingTopics.map((item) => {
+            return <Trendingtopics key={item.id} content={item} />;
+          })}
         </div>
       </section>
 
+      {/* =============== SECTION MORE CATEGORIY =============== */}
+
       <Morecategory />
 
+      {/* =============== SECTION MOST RECENTS =============== */}
       <section className="container">
         <div className="row">
           <div className="flex-space">
@@ -233,20 +236,23 @@ const Home = () => {
         </div>
         <div className="row bb-black">
           {mostRecent.map((item) => {
-              return <Mostrecent key={item.id} content={item} />;
-            })}
+            return <Mostrecent key={item.id} content={item} />;
+          })}
         </div>
         <div className="row">
           {mostRecent1.map((item) => {
-              return <Mostrecent1 key={item.id} content={item} />;
-            })}
+            return <Mostrecent1 key={item.id} content={item} />;
+          })}
         </div>
       </section>
 
+      {/* =============== SECTION PEOPLE =============== */}
       <People />
 
+      {/* =============== SECTION NEWLETTERS =============== */}
       <Newletters />
 
+      {/* =============== SECTION SPONSORED NEWS =============== */}
       <Sponsorednews />
 
       <section className="container">

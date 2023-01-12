@@ -67,7 +67,7 @@ const Mostrecent = ({ content }) => {
         </div>
         <div className="grid-8 p-0">
           <div className="thumb-reverse">
-            <img src={imgCard1} className="py-3 cursor-pointer" alt="" />
+            <img src={imgCard1} className="img-netflix py-3 cursor-pointer" alt="" />
           </div>
         </div>
       </div>
