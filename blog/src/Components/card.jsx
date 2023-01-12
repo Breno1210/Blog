@@ -9,7 +9,7 @@ const Card = ({ content }) => {
   }
   useEffect(() => {
     onTop()
-  }, [routePath]);
+  }, [routePath]); 
   return (
     <>
       <div className="grid-4 card hidden p-0">

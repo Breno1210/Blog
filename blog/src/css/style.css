@@ -591,6 +591,12 @@
   height: 124px;
 }
 
+.imgHigh {
+  width: 593px;
+  height: 640px;
+  position: absolute;
+}
+
 .s-0 {
   margin: 0;
   padding: 0;
@@ -752,6 +758,10 @@
 
 .mt-12 {
   margin-top: 224px !important;
+}
+
+.mt-13 {
+  margin-top: 256px !important;
 }
 
 .ml-0 {

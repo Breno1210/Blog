@@ -7,9 +7,9 @@ import api from "services/api";
 import { useState, useEffect } from "react";
 
 //SVGS E IMGS
-import imgCard1 from "img/netflix.png";
+import imgCard2 from "img/keyboard.png";
 
-const Mostrecent = ({ content }) => {
+const Mostrecent1 = ({ content }) => {
   const [user, setUser] = useState([]);
   const routePath = useLocation();
   const onTop = () => {
@@ -28,14 +28,15 @@ const Mostrecent = ({ content }) => {
   }, []);
   return (
     <>
-      <div className="row bb-black">
+      <div className="row">
         <div className="grid-4 p-0">
           <div className="py-3">
             <Link className="btn-high uppercase">{content.category}</Link>
             <Link to={"/description/" + content.id} onClick={onTop}>
-              <h4 className="mt-1 link-title">{content.title}</h4>
+              <h4 className="mt-1 link-title">
+                {content.title}
+              </h4>
             </Link>
-
             <p className="mb-2 mt-1">
               {content.resume}
             </p>
@@ -66,14 +67,13 @@ const Mostrecent = ({ content }) => {
           </div>
         </div>
         <div className="grid-8 p-0">
-          <div className="thumb-reverse">
-            <img src={imgCard1} className="py-3 cursor-pointer" alt="" />
+          <div className="thumb-reverse ">
+            <img src={imgCard2} className="py-8 cursor-pointer" alt="" />
           </div>
         </div>
       </div>
-      
     </>
   );
 };
 
-export default Mostrecent;
+export default Mostrecent1;

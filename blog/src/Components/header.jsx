@@ -52,7 +52,7 @@ const Header = () => {
     // Pega o valor antigo e adiciona o novo que veio
     setForm({ ...form, [name]: value});
 
-    //console.log(form);
+    
   }
 
   function handleSearch(){

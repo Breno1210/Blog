@@ -63,7 +63,7 @@ const Search = () => {
                   onChange={onChange}
                 />
                 <div className="cta-desktop ml-3">
-                  <Link className="btn">Buscar</Link>
+                  <Link onClick={handleSearch} className="btn">Buscar</Link>
                 </div>
               </form>
             </div>

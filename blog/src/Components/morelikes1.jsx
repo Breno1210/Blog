@@ -25,7 +25,7 @@ const Morelikes1 = ({ content }) => {
   }
   useEffect(() => {
     onTop()
-  }, [routePath]);
+  }, [routePath]); 
   return (
     <>
         <div className="py-3 bb-black">

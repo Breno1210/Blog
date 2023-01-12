@@ -15,7 +15,7 @@ const Morelikes = ({ content }) => {
   }
   useEffect(() => {
     onTop()
-  }, [routePath]);
+  }, [routePath]); 
 
   useEffect(() => {
     if (content) {

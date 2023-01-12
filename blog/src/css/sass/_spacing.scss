@@ -10,6 +10,8 @@ $gap-8: 96px;
 $gap-9: 128px;
 $gap-10: 160px;
 $gap-11: 192px;
+$gap-12: 224px;
+$gap-13: 256px;
 
 .s-0 {
   margin: 0;
@@ -149,7 +151,10 @@ $gap-11: 192px;
   margin-top: $gap-11 !important;
 }
 .mt-12 {
-  margin-top: 224px !important;
+  margin-top: $gap-12 !important;
+}
+.mt-13 {
+  margin-top: $gap-13 !important;
 }
 
 .ml-0 {

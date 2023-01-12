@@ -9,10 +9,13 @@ import Main from "Components/main";
 import Card from "Components/card";
 import Banner from "Components/banner";
 import Highlights from "Components/highlights";
+import Highlights1 from "Components/highlights1";
+import Highlights2 from "Components/highlights2";
 import Morelikes from "Components/morelikes";
 import Morelikes1 from "Components/morelikes1";
 import Morecategory from "Components/morecategory";
 import Mostrecent from "Components/mostrecent";
+import Mostrecent1 from "Components/mostrecent1";
 import People from "Components/people";
 import Newletters from "Components/newletters";
 import Sponsorednews from "Components/sponsorednews";
@@ -23,6 +26,7 @@ import iconStar from "svg/icon-star.svg";
 //SVGS E IMGS
 import iconLike from "svg/icon-like.svg";
 import iconArrowRight from "svg/icon-arrowright.svg";
+import iconRecent from "svg/icon-time.svg";
 
 //API
 import api from "services/api";
@@ -36,9 +40,14 @@ const Home = () => {
   const [main, setMain] = useState([]);
   const [mostSeen, setMostSeen] = useState([]);
   const [banner, setBanner] = useState([]);
+  const [highlight, setHighLight] = useState([]);
+  const [highlight1, setHighLight1] = useState([]);
+  const [highlight2, setHighLight2] = useState([]);
   const [moreLikes, setMoreLikes] = useState([]);
   const [moreLikes1, setMoreLikes1] = useState([]);
-  const [trendingTopics, settrendingTopics] = useState([]);
+  const [trendingTopics, setTrendingTopics] = useState([]);
+  const [mostRecent, setMostRecent] = useState([]);
+  const [mostRecent1, setMostRecent1] = useState([]);
 
   //Faça isso quando o componente montar
   useEffect(() => {
@@ -69,7 +78,32 @@ const Home = () => {
 
     //Requisição de topicos em alta
     api.get("/posts?star=5&_order=desc&_limit=4").then((response) => {
-      settrendingTopics(response.data);
+      setTrendingTopics(response.data);
+    });
+
+    //Requisição de destaques
+    api.get("/posts?views=1000&_order=desc&_limit=1").then((response) => {
+      setHighLight(response.data);
+    });
+
+    //Requisição de destaques1
+    api.get("/posts?views=900&_order=desc&_limit=1").then((response) => {
+      setHighLight1(response.data);
+    });
+
+    //Requisição de destaques2
+    api.get("/posts?views=800&_order=desc&_limit=2").then((response) => {
+      setHighLight2(response.data);
+    });
+
+    //Requisição de mais recentes
+    api.get("/posts?date=12 Jan 2023&_order=desc&_limit=1").then((response) => {
+      setMostRecent(response.data);
+    });
+
+     //Requisição de mais recentes
+     api.get("/posts?date=13 Jan 2023&_order=desc&_limit=1").then((response) => {
+      setMostRecent1(response.data);
     });
   }, []);
 
@@ -78,8 +112,49 @@ const Home = () => {
       <Header />
 
       <Hero />
+      <section className="container">
+        <div className="row ">
+          <div className="flex-space">
+            <div className="flex-start-row">
+              <img src={iconStar} className="icon" alt="" />
+              <h2 className="">
+                Destaques<span>.</span>
+              </h2>
+            </div>
 
-      <Highlights />
+            <div className="flex-end-row mt-2">
+              <Link>
+                <h6 className="color-primary">Explorar mais artigos</h6>
+              </Link>
+              <img
+                src={iconArrowRight}
+                className="icon-arrowRight ml-1"
+                alt=""
+              />
+            </div>
+          </div>
+        </div>
+        <p className="flex-start-row mt-2">
+          Últimas notícias, fotos, vídeos e reportagens especiais
+        </p>
+
+        <div className="row">
+          <div class="grid-6 br-6 hidden p-0 relative thumb">
+            {highlight.map((item) => {
+              return <Highlights key={item.id} content={item} />;
+            })}
+          </div>
+          <div class="grid-6 br-6 hidden p-0 relative thumb py-2">
+            {highlight1.map((item) => {
+              return <Highlights1 key={item.id} content={item} />;
+            })}
+          </div>
+
+          {highlight2.map((item) => {
+            return <Highlights2 key={item.id} content={item} />;
+          })}
+        </div>
+      </section>
 
       <section className="container">
         <div className="row">
@@ -131,7 +206,42 @@ const Home = () => {
 
       <Morecategory />
 
-      <Mostrecent />
+      <section className="container">
+        <div className="row">
+          <div className="flex-space">
+            <div className="flex-start-row">
+              <img src={iconRecent} className="icon" alt="" />
+              <h2 className="">
+                Mais Recentes<span>.</span>
+              </h2>
+            </div>
+
+            <div className="flex-end-row mt-2">
+              <Link>
+                <h6 className="color-primary">Explorar mais artigos</h6>
+              </Link>
+              <img
+                src={iconArrowRight}
+                className="icon-arrowRight ml-1"
+                alt=""
+              />
+            </div>
+          </div>
+          <p className="flex-start-row mt-2">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          </p>
+        </div>
+        <div className="row bb-black">
+          {mostRecent.map((item) => {
+              return <Mostrecent key={item.id} content={item} />;
+            })}
+        </div>
+        <div className="row">
+          {mostRecent1.map((item) => {
+              return <Mostrecent1 key={item.id} content={item} />;
+            })}
+        </div>
+      </section>
 
       <People />
 
