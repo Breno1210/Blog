@@ -70,8 +70,8 @@ const Header = () => {
           </div>
           <ul className="menu">
             <li>
-              <Link to="/" className="p-1">
-                Categorias
+              <Link to="/allposts" className="p-1">
+                Posts
               </Link>
             </li>
             <li>
@@ -142,8 +142,8 @@ const Header = () => {
         <div className="menu-mobile">
           <ul className="nav-mobile">
             <li>
-              <Link to="/" className="link-menu-mobile">
-                Categorias
+              <Link to="/allposts" className="link-menu-mobile">
+                Posts
               </Link>
             </li>
             <li>

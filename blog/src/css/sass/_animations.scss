@@ -1,0 +1,20 @@
+.rectangle1{
+    animation: bg-home-rect 3s ease 0s infinite alternate;
+}
+.rectangle2{
+    animation: bg-home-rect 3s ease 1s infinite alternate;
+}
+.rectangle3{
+    animation: bg-home-rect 3s ease 2s infinite alternate;
+}
+
+
+@keyframes bg-home-rect {
+    0% {
+        transform: translate3d(0, 0, 0);
+    }
+
+    100% {
+        transform: translate3d(0, 60px, 0);
+    }
+}

@@ -6,6 +6,10 @@
     max-width: 56px;
   }
 
+  @include responsive(xs){
+    max-width: 32px;
+  }
+
   &:hover{
     transform: translate(0,-4px,0);
   }
@@ -41,6 +45,15 @@
     max-width: 144px;
   }
 
+}
+
+.icon-xxl{
+  width: 256px;
+  transition: .5s ease;
+
+  @include responsive(s){
+    max-width: 192px;
+  }
 }
 
 /* .ilustration{
@@ -104,6 +117,9 @@
   @include responsive(s){
     max-width: 18px;
   }
+  @include responsive(xs){
+    max-width: 10px;
+  }
 }
 
 .icon-arrowRight2{
@@ -112,6 +128,9 @@
 
   @include responsive(s){
     max-width: 24px;
+  }
+  @include responsive(xs){
+    max-width: 18px;
   }
 }
 

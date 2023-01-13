@@ -1,4 +1,3 @@
-
 import Home from "Pages/Home/Home";
 import About from "Pages/About/About";
 import Contact from "Pages/Contact/Contact";
@@ -7,12 +6,13 @@ import NotFound from "Pages/NotFound/NotFound";
 import PostDescription from "Pages/PostDescription/PostDescription";
 import Profile from "Pages/Profile/Profile";
 import Search from "Pages/Search/Search";
+import AllPosts from "Pages/AllPosts/AllPosts";
+import Thanks from "Pages/Thanks/Thanks";
 
-import { BrowserRouter, Route, Routes, Navigate } from 'react-router-dom';
+import { BrowserRouter, Route, Routes, Navigate } from "react-router-dom";
 
-import Context from 'Pages/Context/Context';
-import { useContext } from 'react';
-
+import Context from "Pages/Context/Context";
+import { useContext } from "react";
 
 function PrivateRoute({ children }) {
   const { token } = useContext(Context);
@@ -23,31 +23,32 @@ function PrivateRoute({ children }) {
 const Paths = () => {
   return (
     <>
-    
-    <BrowserRouter>
+      <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Home/>}/>
-          <Route path="/about" element={<About/>}/>
-          <Route path="/contact" element={<Contact/>}/>
-          <Route path="/login" element={<Login/>}/>
-          {/* <Route path="/profile" element={<Profile/>}/> */}
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/allposts" element={<AllPosts />} />
+          <Route path="/thanks" element={<Thanks />} />
 
-          <Route path="profile" 
-          element={
+          <Route
+            path="profile"
+            element={
               <PrivateRoute>
                 <Profile />
               </PrivateRoute>
-          } />  
+            }
+          />
 
-          <Route path="/description/:idPost" element={<PostDescription/>}/>
-          <Route path="/search/:word_search" element={<Search/>}/>
+          <Route path="/description/:idPost" element={<PostDescription />} />
+          <Route path="/search/:word_search" element={<Search />} />
 
-          <Route path="*" element={<NotFound/>}/>
+          <Route path="*" element={<NotFound />} />
         </Routes>
-    </BrowserRouter>
-    
+      </BrowserRouter>
     </>
   );
-}
+};
 
 export default Paths;

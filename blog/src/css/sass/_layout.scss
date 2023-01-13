@@ -331,13 +331,40 @@ $gutter: 32px;
   border: 1px solid $black-light;
   border-radius: 4px;
   background-color: rgba(15, 20, 31, 0);
+  height: 450px;
 
   transition: .2s ease;
 
   &:hover {
     background-color: rgba(15, 20, 31, 0.2);
   }
+
+  @include responsive(s){
+    height: 680px;
+  }
+  @include responsive(xs){
+    height: 350px;
+  }
 }
+
+.resume{
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.title{
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.check{
+  width: 15px;
+  height: 15px;
+}
+
 
 .thumb {
 
@@ -422,9 +449,7 @@ $gutter: 32px;
 }
 
 .bg-sobre {
-  position: absolute;
-  z-index: -1;
-
+  margin-top: -900px;
   @include responsive(s) {
     display: none;
   }
@@ -439,6 +464,23 @@ $gutter: 32px;
   }
 }
 
+.bg-hero{
+  margin-top: -300px;
+
+  @include responsive(s) {
+    display: none;
+  }
+}
+
+.bg-heroMobile{
+  display: none;
+
+  @include responsive(s) {
+    display: block;
+    position: absolute;
+    margin-top: -300px;
+  }
+}
 .t {
   margin-top: -57px;
 }
@@ -459,10 +501,21 @@ $gutter: 32px;
   }
 }
 
-.text-trending{
+.text-trending {
   @include responsive(s) {
-    
     font-size: 48px;
+  }
+  @include responsive(xs) {
+    font-size: 24px;
+    margin-top: -30px;
+  }
+}
+
+.title-trending{
+  @include responsive(s) {
+    font-size: 32px;
+    font-weight: 500;
+    text-align: center;
   }
 }
 
@@ -475,10 +528,27 @@ $gutter: 32px;
 .img-netflix {
   width: 800px;
   height: 400px;
+
+  @include responsive(s){
+    width: 100%;
+    height: 350px;
+  }
+  @include responsive(xs){
+    height: 150px!important;
+  }
 }
 
 .img-keyboard {
   width: 800px;
+
+  @include responsive(s){
+    width: 100%;
+    height: 450px;
+  }
+  @include responsive(xs){
+    margin-top: -60px;
+    height: 300px;
+  }
 }
 
 .text-category {
@@ -496,3 +566,4 @@ $gutter: 32px;
     margin-left: 50%;
   }
 }
+

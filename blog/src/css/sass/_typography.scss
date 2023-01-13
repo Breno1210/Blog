@@ -51,7 +51,7 @@
     font-weight: 300;
   } @else if $size == h2 and $device == smallmobile {
     font-family: 'Rubik', sans-serif;
-    font-size: 36px;
+    font-size: 24px;
     line-height: 120%;
     font-weight: 300;
   } 
@@ -68,7 +68,7 @@
     font-weight: 300;
   } @else if $size == h3 and $device == smallmobile {
     font-family: 'Rubik', sans-serif;
-    font-size: 28px;
+    font-size: 24px;
     line-height: 130%;
     font-weight: 300;
   }
@@ -110,6 +110,11 @@
   } @else if $size == h6 and $device == mobile {
     font-family: 'Rubik', sans-serif;
     font-size: 16px;
+    line-height: 150%;
+    font-weight: 100;
+  } @else if $size == h6 and $device == smallmobile {
+    font-family: 'Rubik', sans-serif;
+    font-size: 12px;
     line-height: 150%;
     font-weight: 100;
   }
@@ -187,6 +192,20 @@
     line-height: 20px;
     font-weight: 200;
   }
+
+  @else if $size == p6 and $device == desktop {
+    font-size: 11px;
+    line-height: 18px;
+    font-weight: 200;
+  } @else if $size == p6 and $device == mobile {
+    font-size: 11px;
+    line-height: 18px;
+    font-weight: 200;
+  } @else if $size == p6 and $device == smallmobile {
+    font-size: 10px;
+    line-height: 15px;
+    font-weight: 100;
+  }
 }
 
 .h0{
@@ -260,6 +279,10 @@ h6 {
   @include responsive(s) {
     @include typeface-1(h6, mobile);
   }
+
+  @include responsive(xs){
+    @include typeface-1(h6, smallmobile)
+  }
 }
 
 .h7 {
@@ -278,7 +301,7 @@ p {
     @include typeface-2(p3, mobile);
   }
   @include responsive(xs) {
-    @include typeface-2(p3, smallmobile);
+    @include typeface-2(p6, smallmobile);
   }
 }
 
@@ -417,9 +440,5 @@ b{
   border-radius: 6px;
 }
 
-.title-trending{
-  position: absolute;
-  margin-top: 20px !important;
-  margin-left: 82px;
-}
+
 

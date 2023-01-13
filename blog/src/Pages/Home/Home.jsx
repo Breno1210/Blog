@@ -156,6 +156,11 @@ const Home = () => {
           })}
         </div>
       </section>
+      
+      {/* =============== BANNER =============== */}
+      {banner.map((item) => {
+        return <Banner key={item.id} content={item} />;
+      })}
 
       {/* =============== MORE LIKES =============== */}
       <section className="container">
@@ -197,7 +202,7 @@ const Home = () => {
             })}
           </div>
 
-          <h4 className="py-4">Tópicos em alta</h4>
+          <h4 className="title-trending py-4">Tópicos em alta</h4>
           {trendingTopics.map((item) => {
             return <Trendingtopics key={item.id} content={item} />;
           })}
@@ -254,41 +259,6 @@ const Home = () => {
 
       {/* =============== SECTION SPONSORED NEWS =============== */}
       <Sponsorednews />
-
-      <section className="container">
-        <div className="row">
-          <div className="grid-6" data-aos="fade-down" data-aos-delay="200">
-            <img src={iconStar} className="icon-l" alt="" />
-            <h3 className="mt-1">
-              Os melhores e mais bem votados posts do mês.
-            </h3>
-            <p className="mt-2">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ornare
-              urna pharetra ut ac, pellentesque.
-            </p>
-          </div>
-          <div className="grid-6">
-            {main.map((item) => {
-              return <Main key={item.id} content={item} />;
-            })}
-          </div>
-        </div>
-      </section>
-
-      <div className="bg-section">
-        <section className="container">
-          <h3 className="ml-2 mb-3">Mais vistos</h3>
-          <div className="row">
-            {mostSeen.map((item) => {
-              return <Card key={item.id} content={item} />;
-            })}
-          </div>
-        </section>
-      </div>
-
-      {banner.map((item) => {
-        return <Banner key={item.id} content={item} />;
-      })}
 
       <Footer />
     </>

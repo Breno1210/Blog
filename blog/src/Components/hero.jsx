@@ -4,12 +4,28 @@ import { Link } from "react-router-dom";
 
 //SVGS E IMGS
 import heroImg from "svg/blog.svg";
-import iconArrow from "svg/icon-arrowdiagonalright.svg"
+import iconArrow from "svg/icon-arrowdiagonalright.svg";
+import bgHero from "svg/bg-hero.svg";
+import bgHeroMobile from "svg/bg-heromobile.svg";
+
+//IMPORT SVGINJECT
+import SVGInject from "@iconfu/svg-inject";
 
 const Hero = () => {
   return (
     <>
       <section className="container flex-center">
+        <img
+          src={bgHero}
+          className="bg-hero absolute"
+          alt=""
+          onLoad={(e) => {
+            SVGInject(e.target);
+          }}
+          data-aos="fade-up"
+          data-aos-delay="200"
+        />
+        <img src={bgHeroMobile} className="bg-heroMobile" alt="" />
         <div className="row mt-8">
           <div className="flex-center">
             <img src={heroImg} className="ilustration" alt="" />
@@ -30,9 +46,13 @@ const Hero = () => {
             <div className="grid-2 disappear"></div>
           </div>
           <div className="flex-center">
-            <Link href="" className="btn btn-start mt-2">
+            <Link href="" className="btn btn-start">
               Começar a escrever
-              <img src={iconArrow} className="icon-arrowDiagonalRight ml-1" alt="" />
+              <img
+                src={iconArrow}
+                className="icon-arrowDiagonalRight ml-1"
+                alt=""
+              />
             </Link>
           </div>
         </div>

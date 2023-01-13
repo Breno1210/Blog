@@ -19,15 +19,14 @@ const Card = ({ content }) => {
           </Link>
         </div>
         <div className="p-2">
-          <h6 className="color-gray">{content.data}</h6>
           <h6 className="uppercase color-primary btn-high">
             {content.category}
           </h6>
           <Link to={"/description/" + content.id} onClick={onTop} className="link-title">
-            <h4 className="mt-1">{content.title}</h4>
+            <h5 className="mt-1 title">{content.title}</h5>
           </Link>
 
-          <p className="my-2">{content.resume}</p>
+          <p className="my-1 resume" >{content.resume}</p>
           <div className="flex-space">
             <div className="flex-start-row">
               <Link to={"/description/" + content.id} onClick={onTop} className="link p-0">
