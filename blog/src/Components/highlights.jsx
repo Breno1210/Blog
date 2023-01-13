@@ -26,6 +26,7 @@ const Highlights = ({ content }) => {
       });
     }
   }, []);
+
   return (
     <>
       <img src={banner} className="absolute cursor-pointer" alt="" />

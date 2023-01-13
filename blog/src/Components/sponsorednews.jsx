@@ -26,13 +26,15 @@ const Sponsorednews = () => {
       <section className="container">
         <div className="row">
             <section className="container">
-              <div className="flex-start-row">
+              <div className="flex-start-row" data-aos="fade-right"
+            data-aos-delay="400">
                 <img src={iconFlash} className="icon" alt="" />
                 <h2 className="mt-1 mb-1">
                     Notícias patrocinadas<span>.</span>
                 </h2>
               </div>
-              <p className="flex-start-row">
+              <p className="flex-start-row" data-aos="fade-right"
+            data-aos-delay="600">
                 Últimas notícias impulsionadas por nossos patrocinadores.
               </p>
 

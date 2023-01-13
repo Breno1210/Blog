@@ -1,5 +1,5 @@
 //IMPORTS REACT
-import React from "react";
+import { useEffect } from "react";
 import { Link } from "react-router-dom";
 
 //SVGS E IMGS
@@ -11,10 +11,21 @@ import bgHeroMobile from "svg/bg-heromobile.svg";
 //IMPORT SVGINJECT
 import SVGInject from "@iconfu/svg-inject";
 
+//IMPORT AOS
+import AOS from "aos";
+import "aos/dist/aos.css";
+
 const Hero = () => {
+  useEffect(() => {
+    AOS.init({
+      easing: "easy-out-quart",
+      duration: 1000,
+      once: true,
+    });
+  }, []);
   return (
     <>
-      <section className="container flex-center">
+      <section className="container flex-center mb-9">
         <img
           src={bgHero}
           className="bg-hero absolute"
@@ -22,22 +33,20 @@ const Hero = () => {
           onLoad={(e) => {
             SVGInject(e.target);
           }}
-          data-aos="fade-up"
-          data-aos-delay="200"
         />
         <img src={bgHeroMobile} className="bg-heroMobile" alt="" />
         <div className="row mt-8">
-          <div className="flex-center">
+          <div className="flex-center" data-aos="fade-down" data-aos-delay="200">
             <img src={heroImg} className="ilustration" alt="" />
           </div>
-          <div className="flex-center">
+          <div className="flex-center" data-aos="fade-down" data-aos-delay="200">
             <h1 className="h0">
               blog<span>.</span>
             </h1>
           </div>
           <div className="row">
             <div className="grid-2 disappear"></div>
-            <div className="grid-8">
+            <div className="grid-8" data-aos="fade-down" data-aos-delay="300">
               <h6 className="text-center color-gray">
                 Um blog para todos. Escrever. Ler. Comentar. Contribuir.
                 Aprender. Conectar.
@@ -45,7 +54,7 @@ const Hero = () => {
             </div>
             <div className="grid-2 disappear"></div>
           </div>
-          <div className="flex-center">
+          <div className="flex-center" data-aos="fade-down" data-aos-delay="400">
             <Link href="" className="btn btn-start">
               Começar a escrever
               <img
@@ -56,22 +65,6 @@ const Hero = () => {
             </Link>
           </div>
         </div>
-        {/* <div className="row mt-9">
-            <div className="grid-4">
-                <h1 className="h0">blog<span>.</span> </h1>
-                <p>
-                    Um blog para todos. 
-                    Escrever. Ler. Comentar. Contribuir. Aprender. Conectar.
-                </p>
-                <Link href="" className="btn btn-start mt-2">Começar a escrever</Link>
-
-            </div>
-            <div className="grid-1"></div>
-            <div className="grid-6 flex-center">
-                <img src={heroImg} className="ilustration" alt="" />
-            </div>
-            <div className="grid-1"></div>
-        </div> */}
       </section>
     </>
   );

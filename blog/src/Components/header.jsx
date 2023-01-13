@@ -1,6 +1,6 @@
-//React
-import { Link, useNavigate } from "react-router-dom";
-import { useState, useContext } from "react";
+//IMPORTS REACT
+import { Link, useNavigate, useLocation } from "react-router-dom";
+import { useEffect, useState, useContext } from "react";
 
 //COMPONENTS
 import Context from 'Pages/Context/Context';
@@ -59,27 +59,35 @@ const Header = () => {
     navigate(`/search/${form.search}`);
   }
 
+  const routePath = useLocation();
+  const onTop = () => {
+    window.scrollTo(0, 0);
+  }
+  useEffect(() => {
+    onTop()
+  }, [routePath]); 
+
   return (
     <>
       <header className="py-1 px-2">
         <nav>
-          <div className="logo">
+          <div className="logo" data-aos="fade-right" data-aos-delay="400">
             <Link to="/" href="">
               <img src={logo} alt="" />
             </Link>
           </div>
           <ul className="menu">
-            <li>
+            <li data-aos="fade-down" data-aos-delay="800">
               <Link to="/allposts" className="p-1">
                 Posts
               </Link>
             </li>
-            <li>
+            <li data-aos="fade-up" data-aos-delay="1200">
               <Link to="/about" className="p-1">
                 Sobre
               </Link>
             </li>
-            <li>
+            <li data-aos="fade-down" data-aos-delay="1400">
               <Link to="/contact" className="p-1">
                 Contato
               </Link>
@@ -88,7 +96,7 @@ const Header = () => {
         </nav>
         <div className="bx"></div>
         <div className="flex-start-row">
-          <div className="search">
+          <div className="search" data-aos="fade-right" data-aos-delay="1800">
             <form className="flex" onSubmit={handleSearch}>
               <input
                 type="text"
@@ -102,8 +110,8 @@ const Header = () => {
           </div>
           {!token ? (
             <>
-              <div className="cta-desktop ml-3">
-                <Link to="/login" className="btn">
+              <div className="cta-desktop ml-3" data-aos="fade-left" data-aos-delay="2200">
+                <Link to="/login" className="btn" onClick={onTop}>
                   Login
                 </Link>
               </div>

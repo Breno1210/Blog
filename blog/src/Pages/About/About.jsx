@@ -3,6 +3,7 @@ import Header from "Components/header";
 import Footer from "Components/footer";
 
 //IMPORTS REACTS
+import { useEffect } from "react";
 import SVGInject from "@iconfu/svg-inject";
 import { Link } from "react-router-dom";
 
@@ -10,7 +11,18 @@ import { Link } from "react-router-dom";
 import bgSobre from "img/bg-sobre.png";
 import iconLogo from "svg/blog-logo2.svg";
 
+//IMPORT AOS
+import AOS from "aos";
+import "aos/dist/aos.css";
+
 const About = () => {
+  useEffect(() => {
+    AOS.init({
+      easing: "easy-out-quart",
+      duration: 1000,
+      once: true,
+    });
+  }, []);
   return (
     <>
       <Header />

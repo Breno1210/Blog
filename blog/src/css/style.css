@@ -503,6 +503,16 @@
   }
 }
 
+.card-profile {
+  border: 1px solid #151B26;
+  border-radius: 4px;
+  background-color: rgba(15, 20, 31, 0);
+  transition: 0.2s ease;
+}
+.card-profile:hover {
+  background-color: rgba(15, 20, 31, 0.2);
+}
+
 .resume {
   display: -webkit-box;
   -webkit-line-clamp: 2;
@@ -2272,7 +2282,7 @@ a:hover {
 
 .link-footer {
   padding: 8px 8px 8px 8px;
-  transition: 0.7s ease;
+  transition: 1s ease;
 }
 .link-footer:hover {
   padding: 8px 8px 8px 16px;

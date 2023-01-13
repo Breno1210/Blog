@@ -12,7 +12,8 @@ const Card = ({ content }) => {
   }, [routePath]); 
   return (
     <>
-      <div className="grid-4 card hidden p-0">
+      <div className="grid-4 card hidden p-0" data-aos="fade-up"
+            data-aos-delay="400">
         <div className="thumb hidden">
           <Link to={"/description/" + content.id} onClick={onTop} className="p-0">
             <img src={content.imageUrl} alt="" />

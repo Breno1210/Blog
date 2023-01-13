@@ -16,6 +16,10 @@ import { useState, useEffect } from "react";
 //API
 import api from "services/api";
 
+//IMPORT AOS
+import AOS from "aos";
+import "aos/dist/aos.css";
+
 const AllPosts = () => {
   const [allposts, setAllPosts] = useState([]);
   //Requisição do Main que mostra os 2 posts em ordem decrescente que tenha 5 estrelas
@@ -49,6 +53,14 @@ const AllPosts = () => {
 
     setWord(form.search);
   }
+
+  useEffect(() => {
+    AOS.init({
+      easing: "easy-out-quart",
+      duration: 1000,
+      once: true,
+    });
+  }, []);
   return (
     <>
       <Header />
@@ -85,10 +97,14 @@ const AllPosts = () => {
         </div>
         <div className="bb-black my-5"></div>
         <div className="row ">
-          <div className="flex-center">
+          <div
+            className="flex-center" data-aos="fade-down" data-aos-delay="400"
+          >
             <img src={iconStar} className="icon" alt="" />
           </div>
-          <div className="flex-center mb-5">
+          <div
+            className="flex-center mb-5" data-aos="fade-up" data-aos-delay="600"
+          >
             <h2 className="link-title">
               Todos os Posts<span>.</span>
             </h2>

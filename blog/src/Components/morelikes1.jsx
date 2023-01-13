@@ -22,42 +22,41 @@ const Morelikes1 = ({ content }) => {
   const routePath = useLocation();
   const onTop = () => {
     window.scrollTo(0, 0);
-  }
+  };
   useEffect(() => {
-    onTop()
-  }, [routePath]); 
+    onTop();
+  }, [routePath]);
+
   return (
     <>
-        <div className="py-3 bb-black">
-          <Link>
-            <h6 className="btn-high uppercase color-primary">
-              {content.category}
-            </h6>
-          </Link>
+      <div className="py-3 bb-black">
+        <Link>
+          <h6 className="btn-high uppercase color-primary">
+            {content.category}
+          </h6>
+        </Link>
 
-          <Link to={"/description/" + content.id} onClick={onTop}>
-            <h5 className="mt-1 link-title">{content.title}</h5>
-          </Link>
+        <Link to={"/description/" + content.id} onClick={onTop}>
+          <h5 className="mt-1 link-title">{content.title}</h5>
+        </Link>
 
-          <p className="p4 mt-1">
-            {content.resume}
-          </p>
+        <p className="p4 mt-1">{content.resume}</p>
 
-          <div className="flex-start-row mt-1">
-            <div className="profile">
-              <img
-                src={user.ImageProfile}
-                className="profile-img cursor-pointer"
-                alt=""
-              />
-            </div>
-            <p className="p5 ml-2">by {user.name} {user.surname}</p>
-            <div className="dot ml-1 mr-1"></div>
-            <p className="p5">{content.date}</p>
+        <div className="flex-start-row mt-1">
+          <div className="profile">
+            <img
+              src={user.ImageProfile}
+              className="profile-img cursor-pointer"
+              alt=""
+            />
           </div>
+          <p className="p5 ml-2">
+            by {user.name} {user.surname}
+          </p>
+          <div className="dot ml-1 mr-1"></div>
+          <p className="p5">{content.date}</p>
         </div>
-      
-
+      </div>
     </>
   );
 };

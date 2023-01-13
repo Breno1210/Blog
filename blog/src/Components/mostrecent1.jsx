@@ -29,7 +29,8 @@ const Mostrecent1 = ({ content }) => {
   return (
     <>
       <div className="row">
-        <div className="grid-4 p-0">
+        <div className="grid-4 p-0" data-aos="fade-right"
+            data-aos-delay="800">
           <div className="py-3">
             <Link className="btn-high uppercase">{content.category}</Link>
             <Link to={"/description/" + content.id} onClick={onTop}>
@@ -66,7 +67,8 @@ const Mostrecent1 = ({ content }) => {
             </div>
           </div>
         </div>
-        <div className="grid-8 p-0">
+        <div className="grid-8 p-0" data-aos="fade-left"
+            data-aos-delay="1000">
           <div className="thumb-reverse ">
             <img src={imgCard2} className="img-keyboard py-8 cursor-pointer" alt="" />
           </div>

@@ -3,6 +3,7 @@ import { Link, useLocation } from "react-router-dom";
 
 import { useEffect } from "react";
 
+
 const Trendingtopics = ({ content }) => {
   const routePath = useLocation();
   const onTop = () => {
@@ -11,9 +12,10 @@ const Trendingtopics = ({ content }) => {
   useEffect(() => {
     onTop();
   }, [routePath]);
+
   return (
     <>
-      <div class="grid-3 br-6 hidden p-0 relative thumb">
+      <div class="grid-3 br-6 hidden p-0 relative thumb" data-aos="fade-left" data-aos-delay="900">
         <img src={content.imageUrl} className=" absolute " alt="" />
         <div className="">
           <div className="trending-card thumb">

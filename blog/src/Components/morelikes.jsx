@@ -12,10 +12,10 @@ const Morelikes = ({ content }) => {
   const routePath = useLocation();
   const onTop = () => {
     window.scrollTo(0, 0);
-  }
+  };
   useEffect(() => {
-    onTop()
-  }, [routePath]); 
+    onTop();
+  }, [routePath]);
 
   useEffect(() => {
     if (content) {
@@ -24,6 +24,7 @@ const Morelikes = ({ content }) => {
       });
     }
   }, []);
+
   return (
     <>
       <div className="py-3">

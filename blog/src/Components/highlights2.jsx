@@ -27,7 +27,7 @@ const Highlights2 = ({ content }) => {
 
   return (
     <>
-      <div class="grid-3 hidden p-0 br-6 relative thumb">
+      <div class="grid-3 hidden p-0 br-6 relative thumb" data-aos="fade-up" data-aos-delay="400">
         <img src={content.imageUrl} className=" absolute" alt="" />
         <div className="ml-2 mt-10 py-3">
           <Link className="btn-high uppercase">{content.category}</Link>

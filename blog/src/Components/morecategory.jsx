@@ -33,21 +33,27 @@ const Morecategory = () => {
     <>
       <section className="container">
         <div className="row">
-          <div className="flex-center">
+          <div
+            className="flex-center"
+            data-aos="fade-down"
+            data-aos-delay="200"
+          >
             <img src={iconLayer} className="icon" alt="" />
           </div>
-          <div className="flex-center">
+          <div className="flex-center" data-aos="fade-down"
+          data-aos-delay="200">
             <h2 className="mt-1 mb-1">
               Mais Categorias<span>.</span>
             </h2>
           </div>
-          <p className="text-center">
+          <p className="text-center" data-aos="fade-down"
+          data-aos-delay="300">
             Pesquise os seus conteúdos por categoria. Clique e veja mais.
           </p>
         </div>
         <div
           className="flex-center mt-5"
-          data-aos="fade-down"
+          data-aos="fade-up"
           data-aos-delay="400"
         >
           <Swiper
@@ -67,11 +73,7 @@ const Morecategory = () => {
               <SwiperSlide>
                 <div className="py-2">
                   <div className="thumb">
-                    <img
-                      src={imgCategory1}
-                      className="absolute"
-                      alt=""
-                    />
+                    <img src={imgCategory1} className="absolute" alt="" />
                     <Link onClick={onTop}>
                       <h6 className="text-category text-center link-title">
                         Tecnologia
@@ -83,11 +85,7 @@ const Morecategory = () => {
               <SwiperSlide>
                 <div className="py-2">
                   <div className="thumb">
-                    <img
-                      src={imgCategory2}
-                      className="absolute"
-                      alt=""
-                    />
+                    <img src={imgCategory2} className="absolute" alt="" />
                     <Link onClick={onTop}>
                       <h6 className="text-category text-center link-title">
                         Cinema
@@ -99,11 +97,7 @@ const Morecategory = () => {
               <SwiperSlide>
                 <div className="py-2">
                   <div className="thumb">
-                    <img
-                      src={imgCategory3}
-                      className="absolute"
-                      alt=""
-                    />
+                    <img src={imgCategory3} className="absolute" alt="" />
                     <Link onClick={onTop}>
                       <h6 className="text-category text-center link-title">
                         Games
@@ -115,11 +109,7 @@ const Morecategory = () => {
               <SwiperSlide>
                 <div className="py-2">
                   <div className="thumb">
-                    <img
-                      src={imgCategory4}
-                      className="absolute"
-                      alt=""
-                    />
+                    <img src={imgCategory4} className="absolute" alt="" />
                     <Link onClick={onTop}>
                       <h6 className="text-category text-center link-title">
                         Fotografia
@@ -131,11 +121,7 @@ const Morecategory = () => {
               <SwiperSlide>
                 <div className="py-2">
                   <div className="thumb">
-                    <img
-                      src={imgCategory5}
-                      className="absolute"
-                      alt=""
-                    />
+                    <img src={imgCategory5} className="absolute" alt="" />
                     <Link onClick={onTop}>
                       <h6 className="text-category text-center link-title">
                         Entreterimento

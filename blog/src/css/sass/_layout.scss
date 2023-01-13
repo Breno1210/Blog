@@ -347,6 +347,19 @@ $gutter: 32px;
   }
 }
 
+.card-profile {
+  border: 1px solid $black-light;
+  border-radius: 4px;
+  background-color: rgba(15, 20, 31, 0);
+
+  transition: .2s ease;
+
+  &:hover {
+    background-color: rgba(15, 20, 31, 0.2);
+  }
+
+}
+
 .resume{
   display: -webkit-box;
   -webkit-line-clamp: 2;

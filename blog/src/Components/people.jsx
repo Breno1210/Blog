@@ -21,15 +21,18 @@ const People = () => {
     <>
       <section className="container">
         <div className="row">
-          <div className="flex-center">
+          <div className="flex-center" data-aos="fade-down"
+            data-aos-delay="200">
             <img src={iconLayer} className="icon" alt="" />
           </div>
-          <div className="flex-center">
+          <div className="flex-center" data-aos="fade-right"
+            data-aos-delay="400">
             <h2 className="mt-1 mb-1">
               Nossos colunistas<span>.</span>
             </h2>
           </div>
-          <p className="text-center">
+          <p className="text-center" data-aos="fade-up"
+            data-aos-delay="500">
             Os melhores em conteúdo, Clique e veja mais sobre os artigos de cada
             um.
           </p>
@@ -37,8 +40,6 @@ const People = () => {
 
         <div
           className="flex-center mt-5"
-          data-aos="fade-down"
-          data-aos-delay="400"
         >
           <Swiper
             spaceBetween={50}
@@ -54,7 +55,8 @@ const People = () => {
             className="mySwiper"
           >
             <SwiperSlide>
-              <div className="relative br-6 thumb">
+              <div className="relative br-6 thumb" data-aos="fade-up"
+            data-aos-delay="200">
                   <img src={imgPeople1} className="absolute" alt="" />
                 
                 <div className="p-2">
@@ -67,7 +69,8 @@ const People = () => {
               </div>
             </SwiperSlide>
             <SwiperSlide>
-              <div className="relative br-6 thumb">
+              <div className="relative br-6 thumb" data-aos="fade-down"
+            data-aos-delay="400">
                 <img src={imgPeople2} className="absolute" alt="" />
                 <div className="p-2">
                   <div className="mt-12">
@@ -79,7 +82,8 @@ const People = () => {
               </div>
             </SwiperSlide>
             <SwiperSlide>
-              <div className="relative br-6 thumb">
+              <div className="relative br-6 thumb" data-aos="fade-up"
+            data-aos-delay="700">
                 <img src={imgPeople3} className="absolute" alt="" />
                 <div className="p-2">
                   <div className="mt-12">
@@ -91,7 +95,8 @@ const People = () => {
               </div>
             </SwiperSlide>
             <SwiperSlide>
-              <div className="relative br-6 thumb">
+              <div className="relative br-6 thumb" data-aos="fade-down"
+            data-aos-delay="1000">
                 <img src={imgPeople4} className="absolute" alt="" />
                 <div className="p-2">
                   <div className="mt-12">

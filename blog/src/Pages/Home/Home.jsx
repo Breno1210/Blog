@@ -5,8 +5,6 @@ import { Link } from "react-router-dom";
 import Header from "Components/header";
 import Footer from "Components/footer";
 import Hero from "Components/hero";
-import Main from "Components/main";
-import Card from "Components/card";
 import Banner from "Components/banner";
 import Highlights from "Components/highlights";
 import Highlights1 from "Components/highlights1";
@@ -23,7 +21,6 @@ import Trendingtopics from "Components/trendingtopics";
 
 //SVGS E IMGS
 import iconStar from "svg/icon-star.svg";
-import iconLayer from "svg/icon-layers.svg";
 import iconLike from "svg/icon-like.svg";
 import iconArrowRight from "svg/icon-arrowright.svg";
 import iconRecent from "svg/icon-time.svg";
@@ -34,10 +31,12 @@ import api from "services/api";
 // Hooks
 import { useState, useEffect } from "react";
 
+//IMPORT AOS
+import AOS from "aos";
+import "aos/dist/aos.css";
+
 const Home = () => {
   //Variáveis de estado
-  const [main, setMain] = useState([]);
-  const [mostSeen, setMostSeen] = useState([]);
   const [banner, setBanner] = useState([]);
   const [highlight, setHighLight] = useState([]);
   const [highlight1, setHighLight1] = useState([]);
@@ -50,19 +49,9 @@ const Home = () => {
 
   //Faça isso quando o componente montar
   useEffect(() => {
-    //Requisição do Main que mostra os 2 posts em ordem decrescente que tenha 5 estrelas
-    api.get("/posts?star=5&_limit=2&_order=desc").then((response) => {
-      setMain(response.data);
-    });
-
     //Requisição do Banner que sorteia de acordo com a data em ordem decrescente com limite 1
     api.get("/posts?_sort=date&_order=desc&_limit=1").then((response) => {
       setBanner(response.data);
-    });
-
-    //Requisição de Posts mais vistos
-    api.get("/posts?_limit=3").then((response) => {
-      setMostSeen(response.data);
     });
 
     //Requisição de Posts mais curtidos
@@ -106,6 +95,14 @@ const Home = () => {
     });
   }, []);
 
+  useEffect(() => {
+    AOS.init({
+      easing: "easy-out-quart",
+      duration: 1000,
+      once: true,
+    });
+  }, []);
+
   return (
     <>
       <Header />
@@ -114,16 +111,24 @@ const Home = () => {
 
       {/* =============== SECTION HIGHLIGHT =============== */}
       <section className="container">
-        <div className="row ">
+        <div className="row mt-5">
           <div className="flex-space">
-            <div className="flex-start-row">
+            <div
+              className="flex-start-row"
+              data-aos="fade-right"
+              data-aos-delay="200"
+            >
               <img src={iconStar} className="icon" alt="" />
               <h2 className="">
                 Destaques<span>.</span>
               </h2>
             </div>
 
-            <div className="flex-end-row mt-2">
+            <div
+              className="flex-end-row mt-2"
+              data-aos="fade-left"
+              data-aos-delay="200"
+            >
               <Link>
                 <h6 className="color-primary">Explorar mais artigos</h6>
               </Link>
@@ -135,17 +140,29 @@ const Home = () => {
             </div>
           </div>
         </div>
-        <p className="flex-start-row mt-2">
+        <p
+          className="flex-start-row mt-2"
+          data-aos="fade-right"
+          data-aos-delay="200"
+        >
           Últimas notícias, fotos, vídeos e reportagens especiais
         </p>
 
         <div className="row">
-          <div class="grid-6 br-6 hidden p-0 relative thumb">
+          <div
+            class="grid-6 br-6 hidden p-0 relative thumb"
+            data-aos="fade-right"
+            data-aos-delay="400"
+          >
             {highlight.map((item) => {
               return <Highlights key={item.id} content={item} />;
             })}
           </div>
-          <div class="grid-6 br-6 hidden p-0 relative thumb py-2">
+          <div
+            class="grid-6 br-6 hidden p-0 relative thumb py-2"
+            data-aos="fade-down"
+            data-aos-delay="400"
+          >
             {highlight1.map((item) => {
               return <Highlights1 key={item.id} content={item} />;
             })}
@@ -156,7 +173,7 @@ const Home = () => {
           })}
         </div>
       </section>
-      
+
       {/* =============== BANNER =============== */}
       {banner.map((item) => {
         return <Banner key={item.id} content={item} />;
@@ -166,14 +183,22 @@ const Home = () => {
       <section className="container">
         <div className="row">
           <div className="flex-space">
-            <div className="flex-start-row">
+            <div
+              className="flex-start-row"
+              data-aos="fade-right"
+              data-aos-delay="200"
+            >
               <img src={iconLike} className="icon" alt="" />
               <h2 className="">
                 Mais Curtidos<span>.</span>
               </h2>
             </div>
 
-            <div className="flex-end-row mt-2">
+            <div
+              className="flex-end-row mt-2"
+              data-aos="fade-left"
+              data-aos-delay="300"
+            >
               <Link>
                 <h6 className="color-primary">Explorar mais artigos</h6>
               </Link>
@@ -184,25 +209,38 @@ const Home = () => {
               />
             </div>
           </div>
-          <p className="flex-start-row mt-2">
+          <p
+            className="flex-start-row mt-2"
+            data-aos="fade-right"
+            data-aos-delay="200"
+          >
             Lorem ipsum dolor sit amet, consectetur adipiscing elit.
           </p>
         </div>
 
         <div className="row">
-          <div className="grid-5 p-0">
+          <div
+            className="grid-5 p-0"
+            data-aos="fade-right"
+            data-aos-delay="400"
+          >
             {moreLikes.map((item) => {
               return <Morelikes key={item.id} content={item} />;
             })}
           </div>
-
-          <div className="grid-4 p-0">
+          <div className="grid-4 p-0" data-aos="fade-down" data-aos-delay="600">
             {moreLikes1.map((item) => {
               return <Morelikes1 key={item.id} content={item} />;
             })}
           </div>
 
-          <h4 className="title-trending py-4">Tópicos em alta</h4>
+          <h4
+            className="title-trending py-4"
+            data-aos="fade-left"
+            data-aos-delay="800"
+          >
+            Tópicos em alta
+          </h4>
           {trendingTopics.map((item) => {
             return <Trendingtopics key={item.id} content={item} />;
           })}
@@ -217,14 +255,16 @@ const Home = () => {
       <section className="container">
         <div className="row">
           <div className="flex-space">
-            <div className="flex-start-row">
+            <div className="flex-start-row" data-aos="fade-right"
+            data-aos-delay="200">
               <img src={iconRecent} className="icon" alt="" />
               <h2 className="">
                 Mais Recentes<span>.</span>
               </h2>
             </div>
 
-            <div className="flex-end-row mt-2">
+            <div className="flex-end-row mt-2" data-aos="fade-left"
+            data-aos-delay="300">
               <Link>
                 <h6 className="color-primary">Explorar mais artigos</h6>
               </Link>
@@ -235,9 +275,6 @@ const Home = () => {
               />
             </div>
           </div>
-          <p className="flex-start-row mt-2">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-          </p>
         </div>
         <div className="row bb-black">
           {mostRecent.map((item) => {

@@ -1,5 +1,5 @@
 //IMPORTS REACT
-import React from "react";
+import { useEffect } from "react";
 import { Link } from "react-router-dom";
 
 //IMPORT COMPONENTS
@@ -14,13 +14,23 @@ import bgHeroMobile from "svg/bg-heromobile.svg";
 //IMPORT SVGINJECT
 import SVGInject from "@iconfu/svg-inject";
 
+//IMPORT AOS
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const Thanks = () => {
+  useEffect(() => {
+    AOS.init({
+      easing: "easy-out-quart",
+      duration: 1000,
+      once: true,
+    });
+  }, []);
   return (
     <>
-        <Header />
+      <Header />
       <section className="container">
-        <div className="flex-center">
+        <div className="flex-center" data-aos="fade-down" data-aos-delay="600">
           <img
             src={bgHero}
             className="bg-hero absolute"
@@ -28,8 +38,6 @@ const Thanks = () => {
             onLoad={(e) => {
               SVGInject(e.target);
             }}
-            data-aos="fade-up"
-            data-aos-delay="200"
           />
           <img src={bgHeroMobile} className="bg-heroMobile" alt="" />
           <div className="row mt-9">
@@ -44,7 +52,7 @@ const Thanks = () => {
           </div>
         </div>
 
-        <div className="row mb-9" data-aos="fade-down" data-aos-delay="400">
+        <div className="row mb-9" data-aos="fade-up" data-aos-delay="800">
           <div className="grid-3 disappear"></div>
           <div className="grid-6 mb-7">
             <h2 className=" text-center color-gradient">Muito Obrigado!</h2>

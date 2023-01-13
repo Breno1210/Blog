@@ -1,5 +1,5 @@
 //IMPORTS REACT
-import { useState, useContext } from "react";
+import { useEffect, useState, useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
 //COMPONENTS
@@ -13,6 +13,10 @@ import imgLogin from "img/18.png";
 //import iconUser from "svg/icon-user.svg";
 //import iconPassword from "svg/icon-password.svg";
 
+//IMPORT AOS
+import AOS from "aos";
+import "aos/dist/aos.css";
+
 //API
 import api from "services/api";
 
@@ -22,6 +26,8 @@ const initialState = {
   user: "",
   password: "",
 };
+
+
 
 const Login = () => {
   console.log(MD5("123456").toString().toUpperCase());
@@ -92,6 +98,14 @@ const Login = () => {
     });
   }
 
+  useEffect(() => {
+    AOS.init({
+      easing: "easy-out-quart",
+      duration: 1000,
+      once: true,
+    });
+  }, []);
+
   return (
     <>
       <Header />
@@ -100,15 +114,18 @@ const Login = () => {
         <div className="row mb-8">
           <div className="grid-1 disappear"></div>
           <div className="grid-4 disappear">
-            <div className="flex-center">
+            <div className="flex-center" data-aos="fade-down"
+              data-aos-delay="200">
               <Link to="/">
                 <img src={logo} className="icon-xl mt-6" alt="" />
               </Link>
             </div>
-            <h5 className="text-center mb-3 mt-1">Seja bem-vindo ao blog.</h5>
+            <h5 className="text-center mb-3 mt-1" data-aos="fade-down"
+              data-aos-delay="400">Seja bem-vindo ao blog.</h5>
             <div className="row">
               <form className="" onSubmit={handleLogin}>
-                <div className="">
+                <div className="" data-aos="fade-right"
+              data-aos-delay="600">
                   <input
                     type="text"
                     id="user"
@@ -119,7 +136,8 @@ const Login = () => {
                     value={form.email}
                   />
                 </div>
-                <div className="">
+                <div className="" data-aos="fade-left"
+              data-aos-delay="800">
                   <input
                     type="password"
                     id="password"
@@ -132,19 +150,23 @@ const Login = () => {
                 </div>
                 <div className="flex-space my-1">
                   <div className="flex-start-row">
-                    <div className="flex-center">
+                    <div className="flex-center" data-aos="fade-right"
+              data-aos-delay="1000">
                       <input type="checkbox" className="check ml-1 mr-1 mt-1" />
                       <p className="mt-1">Lembrar-me</p>
                     </div>
                   </div>
-                  <div className="flex-end-row">
+                  <div className="flex-end-row" data-aos="fade-left"
+              data-aos-delay="1200">
                     <Link to="/notfound" className="mt-1">
                       Esqueceu sua senha?
                     </Link>
                   </div>
                 </div>
-                <button className="btn w-100 mt-1">Entrar</button>
-                <p className="text-center mt-2">
+                <button className="btn w-100 mt-1" data-aos="fade-up"
+              data-aos-delay="1400">Entrar</button>
+                <p className="text-center mt-2" data-aos="fade-right"
+              data-aos-delay="600">
                   Não possui uma conta?{" "}
                   <Link to="/notfound">Criar uma conta</Link>
                 </p>
@@ -178,14 +200,17 @@ const Login = () => {
           <div className="grid-1 disappear"></div>
           <div className="grid-6 br-6 p-0 relative thumb-reverse">
             <div>
-              <img src={imgLogin} className="absolute" alt="" />
-              <div className="flex-center">
+              <img src={imgLogin} className="absolute" alt="" data-aos="fade-left"
+              data-aos-delay="1600"/>
+              <div className="flex-center" data-aos="fade-right"
+              data-aos-delay="1800">
                 <Link className="btn mt-400">
                   <h6 className="uppercase">Fotografia</h6>
                 </Link>
               </div>
 
-              <h4 className="text-center mt-1">Seja bem-vindo ao blog.</h4>
+              <h4 className="text-center mt-1" data-aos="fade-left"
+              data-aos-delay="2000">Seja bem-vindo ao blog.</h4>
             </div>
           </div>
         </div>
