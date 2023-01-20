@@ -53,6 +53,14 @@ Refresh the page (F5)
 
 ```
 
+<h1 align="center">
+    UI-Final
+</h1>
+<h1 align="center">
+    <img alt="Logo" src="blog/src/img/ui-final.png" />
+    <br>
+</h1>
+
 ## ✒️ Author
 
 - [@Breno1210](https://github.com/Breno1210)
