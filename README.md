@@ -58,7 +58,6 @@ Refresh the page (F5)
 </h1>
 <h1 align="center">
     <img alt="Logo" src="blog/src/img/ui-final.png" />
-    <br>
 </h1>
 
 ## ✒️ Author
