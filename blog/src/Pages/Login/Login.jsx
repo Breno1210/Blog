@@ -113,7 +113,7 @@ const Login = () => {
       <section className="container mb-3">
         <div className="row mb-8">
           <div className="grid-1 disappear"></div>
-          <div className="grid-4 disappear">
+          <div className="grid-4">
             <div className="flex-center" data-aos="fade-down"
               data-aos-delay="200">
               <Link to="/">
